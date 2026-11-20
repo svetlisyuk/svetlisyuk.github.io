@@ -1,0 +1,1809 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>花都影视 - 品牌官网,城市影像内容生态</title>
+<meta name="description" content="花都影视官方网站，深耕城市影像与在地文化的视频品牌平台，聚合原创精品内容、创作者社区与企业动态，为用户提供值得信赖的高品质影像内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a2b4a'/%3E%3Cpath d='M24 20 L46 32 L24 44 Z' fill='%23f5b841'/%3E%3C/svg%3E">
+<style>
+:root{
+  --hy-ink:#152238;
+  --hy-ink-2:#22344f;
+  --hy-blue:#1f4e8c;
+  --hy-blue-deep:#12294d;
+  --hy-amber:#f5b841;
+  --hy-amber-soft:#ffe3a3;
+  --hy-mist:#eef3f8;
+  --hy-paper:#ffffff;
+  --hy-line:#d7e1ec;
+  --hy-text:#2b3a4f;
+  --hy-sub:#63758c;
+  --hy-shadow:0 14px 34px rgba(21,34,56,.12);
+  --hy-radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,sans-serif;
+  color:var(--hy-text);background:var(--hy-mist);line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+.hy-shell{max-width:1180px;margin:0 auto;padding:0 22px}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+img{display:block;max-width:100%}
+
+/* ===== 吸顶：公告条 + 页头 ===== */
+.hy-sticky{position:sticky;top:0;z-index:120}
+.hy-notice{
+  background:linear-gradient(90deg,var(--hy-blue-deep),var(--hy-blue) 60%,#2a6cb4);
+  color:#eaf2fc;font-size:13px;letter-spacing:.2px;
+  display:flex;align-items:center;gap:14px;padding:9px 22px;
+  overflow:hidden;
+}
+.hy-notice-tag{
+  flex:0 0 auto;background:var(--hy-amber);color:#40290a;font-weight:700;
+  font-size:12px;padding:2px 9px;border-radius:20px;letter-spacing:.5px;
+}
+.hy-notice-track{flex:1 1 auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hy-notice-track b{color:var(--hy-amber-soft);font-weight:600}
+.hy-notice-time{flex:0 0 auto;color:#a9c4e6;font-size:12px}
+
+.hy-header{
+  background:rgba(255,255,255,.94);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--hy-line);
+  box-shadow:0 2px 14px rgba(21,34,56,.06);
+}
+.hy-header-in{display:flex;align-items:center;gap:26px;height:70px}
+.hy-brand{display:flex;align-items:center;gap:11px;flex:0 0 auto}
+.hy-brand-mark{
+  width:40px;height:40px;border-radius:11px;background:var(--hy-ink);
+  display:grid;place-items:center;box-shadow:0 6px 16px rgba(21,34,56,.28);
+}
+.hy-brand-mark svg{width:22px;height:22px}
+.hy-brand-name{font-size:19px;font-weight:800;color:var(--hy-ink);letter-spacing:1px;line-height:1.2}
+.hy-brand-name small{display:block;font-size:10.5px;font-weight:500;color:var(--hy-sub);letter-spacing:2.4px}
+.hy-nav{display:flex;align-items:center;gap:4px;margin-left:6px;flex:1 1 auto}
+.hy-nav a{
+  font-size:14.5px;color:var(--hy-ink-2);padding:8px 13px;border-radius:9px;
+  transition:.22s;white-space:nowrap;
+}
+.hy-nav a:hover{background:var(--hy-mist);color:var(--hy-blue)}
+.hy-nav a.hy-nav-on{color:var(--hy-blue);font-weight:700;background:#e7f0fb}
+.hy-header-tools{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.hy-search{
+  display:flex;align-items:center;gap:7px;background:var(--hy-mist);
+  border:1px solid var(--hy-line);border-radius:22px;padding:6px 8px 6px 14px;
+  transition:.25s;
+}
+.hy-search:focus-within{border-color:var(--hy-blue);box-shadow:0 0 0 3px rgba(31,78,140,.13);background:#fff}
+.hy-search input{width:150px;border:none;outline:none;background:none;font-size:13.5px;color:var(--hy-ink)}
+.hy-search input::placeholder{color:#93a4b8}
+.hy-search button{
+  width:28px;height:28px;border-radius:50%;background:var(--hy-blue);color:#fff;
+  display:grid;place-items:center;transition:.2s;
+}
+.hy-search button:hover{background:var(--hy-blue-deep)}
+.hy-btn-ghost{
+  font-size:13.5px;color:var(--hy-blue);border:1px solid var(--hy-blue);
+  padding:7px 15px;border-radius:22px;font-weight:600;transition:.22s;white-space:nowrap;
+}
+.hy-btn-ghost:hover{background:var(--hy-blue);color:#fff}
+.hy-burger{display:none;width:40px;height:38px;border-radius:9px;border:1px solid var(--hy-line);place-items:center}
+.hy-burger span{display:block;width:18px;height:2px;background:var(--hy-ink);position:relative}
+.hy-burger span::before,.hy-burger span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--hy-ink)}
+.hy-burger span::before{top:-6px}.hy-burger span::after{top:6px}
+
+.hy-search-hit{
+  margin:0 auto;max-width:1180px;padding:0 22px;
+}
+.hy-search-hit p{
+  display:none;background:#fff8e7;border:1px solid var(--hy-amber-soft);color:#7a5710;
+  font-size:13px;border-radius:0 0 10px 10px;padding:9px 16px;
+}
+.hy-search-hit p.hy-on{display:block}
+
+/* ===== 通用 ===== */
+section{scroll-margin-top:132px}
+.hy-sec{padding:66px 0}
+.hy-sec-alt{background:var(--hy-paper)}
+.hy-sec-head{margin-bottom:36px}
+.hy-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;
+  letter-spacing:2px;color:var(--hy-blue);text-transform:uppercase;margin-bottom:12px;
+}
+.hy-eyebrow::before{content:"";width:26px;height:2px;background:var(--hy-amber);border-radius:2px}
+.hy-h2{font-size:30px;line-height:1.35;color:var(--hy-ink);font-weight:800;letter-spacing:.4px}
+.hy-sec-lead{color:var(--hy-sub);font-size:15px;max-width:760px;margin-top:12px}
+
+/* ===== 首屏 ===== */
+.hy-hero{
+  background:linear-gradient(150deg,#0f2440 0%,#1a3a63 52%,#23538c 100%);
+  color:#e8f1fb;padding:60px 0 64px;position:relative;overflow:hidden;
+}
+.hy-hero::after{
+  content:"";position:absolute;right:-140px;top:-120px;width:520px;height:520px;
+  background:radial-gradient(circle,rgba(245,184,65,.28),transparent 66%);pointer-events:none;
+}
+.hy-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center;position:relative;z-index:1}
+.hy-hero-badge{
+  display:inline-flex;align-items:center;gap:8px;font-size:13px;background:rgba(245,184,65,.16);
+  border:1px solid rgba(245,184,65,.5);color:var(--hy-amber-soft);
+  padding:5px 14px;border-radius:20px;margin-bottom:20px;font-weight:600;letter-spacing:.5px;
+}
+.hy-hero h1{
+  font-size:50px;line-height:1.14;font-weight:900;letter-spacing:2px;
+  color:#fff;margin-bottom:8px;
+}
+.hy-hero-sub{font-size:19px;color:#bcd5f2;letter-spacing:1.5px;margin-bottom:20px;font-weight:500}
+.hy-hero-desc{font-size:15px;color:#c3d7ee;line-height:1.95;max-width:560px}
+.hy-hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.hy-btn-main{
+  background:var(--hy-amber);color:#3a2604;font-weight:800;font-size:15px;
+  padding:12px 26px;border-radius:28px;box-shadow:0 10px 24px rgba(245,184,65,.3);
+  transition:.22s;letter-spacing:.5px;
+}
+.hy-btn-main:hover{transform:translateY(-2px);box-shadow:0 16px 30px rgba(245,184,65,.4)}
+.hy-btn-line{
+  border:1.5px solid rgba(200,221,245,.55);color:#dcebfb;font-weight:600;font-size:15px;
+  padding:11px 24px;border-radius:28px;transition:.22s;letter-spacing:.5px;
+}
+.hy-btn-line:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.hy-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.hy-stat{
+  background:rgba(255,255,255,.07);border:1px solid rgba(190,214,240,.2);
+  border-radius:12px;padding:14px 16px;
+}
+.hy-stat-num{font-size:25px;font-weight:900;color:var(--hy-amber);letter-spacing:.5px}
+.hy-stat-num i{font-size:14px;font-style:normal;font-weight:600;margin-left:2px;color:var(--hy-amber-soft)}
+.hy-stat-label{font-size:12.5px;color:#a9c3e0;margin-top:2px}
+
+.hy-hero-visual{position:relative}
+.hy-hero-main-cover{
+  border-radius:18px;overflow:hidden;box-shadow:0 26px 60px rgba(0,0,0,.38);
+  border:1px solid rgba(180,208,240,.25);position:relative;
+}
+.hy-hero-main-cover svg{display:block;width:100%;height:auto}
+.hy-hero-float{
+  position:absolute;left:-18px;bottom:-22px;background:#fff;color:var(--hy-ink);
+  border-radius:14px;padding:13px 18px;box-shadow:var(--hy-shadow);
+  display:flex;align-items:center;gap:12px;
+}
+.hy-hero-float .hy-float-ico{
+  width:38px;height:38px;border-radius:10px;background:#e7f0fb;display:grid;place-items:center;
+}
+.hy-hero-float b{display:block;font-size:14px}
+.hy-hero-float small{color:var(--hy-sub);font-size:12px}
+
+/* 关键词解析长文 */
+.hy-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.hy-intro-card{
+  background:var(--hy-paper);border:1px solid var(--hy-line);border-radius:var(--hy-radius);
+  padding:30px 32px;box-shadow:0 6px 20px rgba(21,34,56,.05);
+}
+.hy-intro-card h3{font-size:19px;color:var(--hy-ink);margin-bottom:12px;font-weight:800}
+.hy-intro-card h3 span{color:var(--hy-blue)}
+.hy-intro-card p{font-size:14.5px;color:#4a5c73;line-height:2;margin-bottom:13px}
+.hy-intro-card p:last-child{margin-bottom:0}
+.hy-intro-wide{grid-column:1/-1}
+
+/* ===== 焦点视频 ===== */
+.hy-focus-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:22px}
+.hy-vcard{
+  background:var(--hy-paper);border-radius:var(--hy-radius);overflow:hidden;
+  border:1px solid var(--hy-line);box-shadow:0 6px 20px rgba(21,34,56,.05);
+  transition:.26s;position:relative;
+}
+.hy-vcard:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(21,34,56,.14)}
+.hy-vcover{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--hy-ink-2)}
+.hy-vcover svg{width:100%;height:100%;display:block}
+.hy-vcover-shade{
+  position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(9,20,36,.78));
+}
+.hy-vtag{
+  position:absolute;left:11px;top:11px;font-size:11.5px;font-weight:700;letter-spacing:.5px;
+  background:rgba(245,184,65,.95);color:#3a2604;padding:3px 10px;border-radius:20px;
+}
+.hy-vplay{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.9);
+  display:grid;place-items:center;transition:.24s;
+}
+.hy-vplay::after{content:"";border-left:15px solid var(--hy-blue-deep);border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
+.hy-vcard:hover .hy-vplay{background:var(--hy-amber);transform:translate(-50%,-50%) scale(1.08)}
+.hy-vmeta{position:absolute;left:14px;bottom:11px;color:#e8f1fb;font-size:12px;display:flex;gap:12px}
+.hy-vbody{padding:16px 18px 18px}
+.hy-vtitle{font-size:16.5px;font-weight:800;color:var(--hy-ink);line-height:1.5;margin-bottom:7px}
+.hy-vdesc{font-size:13.5px;color:var(--hy-sub);line-height:1.7;margin-bottom:12px;min-height:46px}
+.hy-vfoot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.hy-vauthor{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--hy-sub)}
+.hy-vauthor .hy-avatar{width:24px;height:24px;font-size:11px}
+.hy-vops{display:flex;gap:6px}
+.hy-vops button{
+  font-size:12px;color:var(--hy-sub);background:var(--hy-mist);border-radius:16px;
+  padding:4px 11px;display:flex;align-items:center;gap:4px;transition:.2s;
+}
+.hy-vops button:hover{background:#e2ecf8;color:var(--hy-blue)}
+.hy-vops button.hy-liked{background:#fdeaea;color:#d0453f}
+.hy-vops button.hy-saved{background:#fff3d8;color:#a4761a}
+.hy-focus-side{display:grid;gap:14px;grid-template-rows:1fr 1fr}
+.hy-focus-mini{
+  display:grid;grid-template-columns:128px 1fr;gap:0;align-items:stretch;padding:0;
+}
+.hy-focus-mini .hy-vcover{aspect-ratio:auto;border-radius:0}
+.hy-focus-mini .hy-vbody{padding:12px 14px;display:flex;flex-direction:column;justify-content:center}
+.hy-focus-mini .hy-vtitle{font-size:14px;margin-bottom:4px}
+.hy-focus-mini .hy-vdesc{font-size:12.5px;min-height:0;margin-bottom:8px}
+
+/* 视频流 */
+.hy-filter-row{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px}
+.hy-chip{
+  font-size:13px;color:var(--hy-ink-2);border:1px solid var(--hy-line);background:#fff;
+  padding:6px 15px;border-radius:20px;transition:.2s;
+}
+.hy-chip:hover{border-color:var(--hy-blue);color:var(--hy-blue)}
+.hy-chip.hy-chip-on{background:var(--hy-blue);color:#fff;border-color:var(--hy-blue);font-weight:700}
+.hy-stream{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.hy-stream .hy-vcover{aspect-ratio:16/9}
+.hy-stream-more{text-align:center;margin-top:34px}
+.hy-btn-more{
+  border:1.5px solid var(--hy-blue);color:var(--hy-blue);font-weight:700;font-size:14px;
+  padding:10px 30px;border-radius:26px;transition:.22s;
+}
+.hy-btn-more:hover{background:var(--hy-blue);color:#fff}
+
+/* 专题 */
+.hy-topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.hy-topic{
+  background:var(--hy-paper);border:1px solid var(--hy-line);border-radius:var(--hy-radius);
+  overflow:hidden;transition:.24s;
+}
+.hy-topic:hover{transform:translateY(-4px);box-shadow:var(--hy-shadow)}
+.hy-topic-cover{position:relative;aspect-ratio:16/9}
+.hy-topic-cover svg{width:100%;height:100%;display:block}
+.hy-topic-state{
+  position:absolute;right:11px;top:11px;font-size:11.5px;font-weight:700;
+  background:rgba(18,41,77,.86);color:#ffe3a3;padding:3px 10px;border-radius:16px;letter-spacing:.5px;
+}
+.hy-topic-body{padding:16px 18px 19px}
+.hy-topic-body h3{font-size:16.5px;color:var(--hy-ink);font-weight:800;margin-bottom:7px}
+.hy-topic-body p{font-size:13.5px;color:var(--hy-sub);line-height:1.72}
+.hy-topic-link{display:inline-flex;align-items:center;gap:5px;font-size:13px;color:var(--hy-blue);font-weight:700;margin-top:12px}
+
+/* 创作者 */
+.hy-creator-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.hy-creator{
+  background:var(--hy-paper);border:1px solid var(--hy-line);border-radius:var(--hy-radius);
+  padding:22px 24px;display:flex;gap:16px;transition:.24s;align-items:flex-start;
+}
+.hy-creator:hover{box-shadow:var(--hy-shadow);transform:translateY(-3px)}
+.hy-avatar{
+  width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
+  color:#fff;font-weight:800;font-size:20px;flex:0 0 auto;letter-spacing:0;
+}
+.hy-avatar-sm{width:26px;height:26px;font-size:12px}
+.hy-creator-info{flex:1 1 auto;min-width:0}
+.hy-creator-name{font-size:16px;font-weight:800;color:var(--hy-ink);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.hy-creator-badge{font-size:11px;font-weight:700;background:#e7f0fb;color:var(--hy-blue);padding:2px 8px;border-radius:12px}
+.hy-creator-field{font-size:12.5px;color:var(--hy-blue);margin:3px 0 8px;font-weight:600}
+.hy-creator-desc{font-size:13px;color:var(--hy-sub);line-height:1.72}
+.hy-creator-nums{display:flex;gap:16px;margin-top:10px;font-size:12.5px;color:var(--hy-sub)}
+.hy-creator-nums b{color:var(--hy-ink);font-weight:800}
+.hy-creator-btn{
+  font-size:12.5px;color:var(--hy-blue);border:1px solid var(--hy-blue);
+  padding:4px 13px;border-radius:16px;transition:.2s;font-weight:600;margin-top:12px;
+}
+.hy-creator-btn:hover{background:var(--hy-blue);color:#fff}
+
+/* 故事随笔 */
+.hy-story-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.hy-story{
+  background:linear-gradient(180deg,#fff,#f7fafd);border:1px solid var(--hy-line);
+  border-radius:var(--hy-radius);padding:26px 28px;position:relative;
+}
+.hy-story::before{
+  content:"";position:absolute;left:0;top:22px;bottom:22px;width:3px;
+  background:linear-gradient(180deg,var(--hy-amber),var(--hy-blue));border-radius:3px;
+}
+.hy-story h3{font-size:17px;color:var(--hy-ink);font-weight:800;margin-bottom:10px;padding-left:12px}
+.hy-story p{font-size:14px;color:#4a5c73;line-height:1.95;padding-left:12px}
+.hy-story-by{font-size:12.5px;color:var(--hy-sub);margin-top:13px;padding-left:12px}
+
+/* 影像墙 */
+.hy-wall{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.hy-wall-item{
+  position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--hy-line);
+  background:var(--hy-ink-2);transition:.24s;
+}
+.hy-wall-item:hover{transform:scale(1.02);box-shadow:var(--hy-shadow)}
+.hy-wall-item svg{width:100%;height:100%;display:block}
+.hy-wall-item.hy-wall-big{grid-column:span 2;grid-row:span 2}
+.hy-wall-item.hy-wall-wide{grid-column:span 2}
+.hy-wall-cap{
+  position:absolute;left:0;right:0;bottom:0;padding:22px 12px 9px;
+  background:linear-gradient(180deg,transparent,rgba(9,20,36,.82));
+  color:#eef5fd;font-size:12.5px;font-weight:600;
+}
+
+/* 评价 */
+.hy-comment-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.hy-comment{
+  background:var(--hy-paper);border:1px solid var(--hy-line);border-radius:var(--hy-radius);
+  padding:20px 22px;
+}
+.hy-comment-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.hy-comment-who b{font-size:14px;color:var(--hy-ink);display:block}
+.hy-comment-who small{font-size:11.5px;color:var(--hy-sub)}
+.hy-comment-stars{margin-left:auto;color:var(--hy-amber);font-size:13px;letter-spacing:1px}
+.hy-comment p{font-size:13.5px;color:#4a5c73;line-height:1.8}
+
+/* 动态 */
+.hy-news{display:grid;gap:0;border:1px solid var(--hy-line);border-radius:var(--hy-radius);overflow:hidden;background:#fff}
+.hy-news-item{
+  display:grid;grid-template-columns:104px 1fr auto;gap:18px;align-items:center;
+  padding:18px 24px;border-bottom:1px solid var(--hy-line);transition:.2s;
+}
+.hy-news-item:last-child{border-bottom:none}
+.hy-news-item:hover{background:#f7fafd}
+.hy-news-date{font-size:13px;color:var(--hy-blue);font-weight:700;letter-spacing:.4px}
+.hy-news-title{font-size:14.5px;color:var(--hy-ink);font-weight:600}
+.hy-news-title small{display:block;font-size:12.5px;color:var(--hy-sub);font-weight:400;margin-top:2px}
+.hy-news-cat{font-size:11.5px;background:var(--hy-mist);color:var(--hy-sub);padding:3px 11px;border-radius:14px;white-space:nowrap}
+
+/* 合作品牌 */
+.hy-partners{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.hy-partner{
+  background:#fff;border:1px solid var(--hy-line);border-radius:11px;height:70px;
+  display:grid;place-items:center;font-size:13.5px;font-weight:700;color:#5a6c83;
+  letter-spacing:.5px;transition:.22s;text-align:center;padding:0 8px;
+}
+.hy-partner:hover{border-color:var(--hy-blue);color:var(--hy-blue);background:#f3f8fe}
+
+/* FAQ */
+.hy-faq{display:grid;gap:11px}
+.hy-faq details{
+  background:#fff;border:1px solid var(--hy-line);border-radius:11px;overflow:hidden;
+  transition:.2s;
+}
+.hy-faq details[open]{border-color:#bcd4ee;box-shadow:0 8px 22px rgba(31,78,140,.08)}
+.hy-faq summary{
+  list-style:none;cursor:pointer;padding:16px 22px;font-size:14.5px;font-weight:700;
+  color:var(--hy-ink);display:flex;align-items:center;justify-content:space-between;gap:14px;
+}
+.hy-faq summary::-webkit-details-marker{display:none}
+.hy-faq summary::after{
+  content:"+";font-size:19px;color:var(--hy-blue);font-weight:700;line-height:1;
+  transition:.2s;flex:0 0 auto;
+}
+.hy-faq details[open] summary::after{content:"–"}
+.hy-faq-body{padding:0 22px 18px;font-size:13.5px;color:var(--hy-sub);line-height:1.9}
+
+/* 联系 */
+.hy-contact{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:stretch}
+.hy-contact-card{
+  background:linear-gradient(155deg,#12294d,#23538c);color:#e6f0fb;border-radius:var(--hy-radius);
+  padding:34px 36px;position:relative;overflow:hidden;
+}
+.hy-contact-card::after{
+  content:"";position:absolute;right:-70px;bottom:-90px;width:240px;height:240px;
+  border-radius:50%;background:radial-gradient(circle,rgba(245,184,65,.3),transparent 68%);
+}
+.hy-contact-card h3{font-size:21px;font-weight:800;margin-bottom:10px;color:#fff}
+.hy-contact-card p{font-size:14px;color:#bcd5f2;line-height:1.9;margin-bottom:20px}
+.hy-contact-actions{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+.hy-contact-actions button{
+  font-size:13.5px;font-weight:700;padding:10px 22px;border-radius:24px;transition:.22s;
+}
+.hy-contact-actions .hy-ca-main{background:var(--hy-amber);color:#3a2604}
+.hy-contact-actions .hy-ca-main:hover{background:#ffcc63}
+.hy-contact-actions .hy-ca-line{border:1.5px solid rgba(200,221,245,.6);color:#e6f0fb}
+.hy-contact-actions .hy-ca-line:hover{background:rgba(255,255,255,.12)}
+.hy-contact-info{
+  background:#fff;border:1px solid var(--hy-line);border-radius:var(--hy-radius);
+  padding:30px 32px;display:flex;flex-direction:column;gap:16px;justify-content:center;
+}
+.hy-contact-info div{display:flex;gap:12px;align-items:flex-start}
+.hy-contact-info .hy-ci-ico{
+  width:34px;height:34px;border-radius:9px;background:#e7f0fb;display:grid;place-items:center;
+  flex:0 0 auto;color:var(--hy-blue);font-weight:800;font-size:14px;
+}
+.hy-contact-info b{font-size:14px;color:var(--hy-ink);display:block}
+.hy-contact-info small{font-size:12.5px;color:var(--hy-sub)}
+
+/* 页脚 */
+.hy-footer{background:#0e1f38;color:#a9c3e0;padding:54px 0 0;margin-top:0}
+.hy-footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:32px;padding-bottom:38px}
+.hy-footer h4{font-size:14px;color:#fff;margin-bottom:15px;font-weight:800;letter-spacing:.5px}
+.hy-footer p{font-size:13px;line-height:1.9;color:#9db6d3}
+.hy-footer ul{list-style:none;display:grid;gap:9px}
+.hy-footer ul a{font-size:13px;color:#9db6d3;transition:.2s}
+.hy-footer ul a:hover{color:var(--hy-amber)}
+.hy-footer-brand{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.hy-footer-brand .hy-brand-name{color:#fff}
+.hy-footer-brand .hy-brand-name small{color:#7f9dbe}
+.hy-footer-bottom{
+  border-top:1px solid rgba(140,170,205,.2);padding:20px 0;font-size:12.5px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:#8199b7;
+}
+
+/* Toast */
+.hy-toast{
+  position:fixed;left:50%;bottom:40px;transform:translate(-50%,20px);
+  background:rgba(18,41,77,.94);color:#fff;font-size:13.5px;padding:11px 22px;
+  border-radius:26px;opacity:0;pointer-events:none;transition:.3s;z-index:400;
+  box-shadow:0 12px 30px rgba(0,0,0,.3);
+}
+.hy-toast.hy-toast-on{opacity:1;transform:translate(-50%,0)}
+
+/* Modal */
+.hy-modal-mask{
+  position:fixed;inset:0;background:rgba(9,20,36,.55);backdrop-filter:blur(3px);
+  display:none;place-items:center;z-index:500;padding:20px;
+}
+.hy-modal-mask.hy-modal-on{display:grid}
+.hy-modal{
+  background:#fff;border-radius:16px;max-width:460px;width:100%;padding:26px 28px;
+  box-shadow:0 30px 70px rgba(0,0,0,.35);position:relative;
+}
+.hy-modal h3{font-size:18px;color:var(--hy-ink);font-weight:800;margin-bottom:8px}
+.hy-modal p{font-size:13.5px;color:var(--hy-sub);line-height:1.8;margin-bottom:16px}
+.hy-modal-close{
+  position:absolute;right:14px;top:12px;font-size:20px;color:#8ba0b8;line-height:1;
+}
+.hy-modal-field{display:grid;gap:10px;margin-bottom:18px}
+.hy-modal-field input,.hy-modal-field textarea{
+  width:100%;border:1px solid var(--hy-line);border-radius:9px;padding:10px 13px;
+  font-size:13.5px;font-family:inherit;outline:none;color:var(--hy-ink);
+}
+.hy-modal-field input:focus,.hy-modal-field textarea:focus{border-color:var(--hy-blue)}
+.hy-modal-submit{
+  width:100%;background:var(--hy-blue);color:#fff;font-weight:700;font-size:14.5px;
+  padding:11px;border-radius:24px;transition:.2s;
+}
+.hy-modal-submit:hover{background:var(--hy-blue-deep)}
+.hy-share-row{display:flex;gap:10px;flex-wrap:wrap}
+.hy-share-row button{
+  flex:1 1 0;min-width:90px;font-size:13px;font-weight:700;padding:11px;border-radius:10px;
+  background:var(--hy-mist);color:var(--hy-ink-2);transition:.2s;
+}
+.hy-share-row button:hover{background:var(--hy-blue);color:#fff}
+
+/* 回顶 */
+.hy-totop{
+  position:fixed;right:24px;bottom:28px;width:46px;height:46px;border-radius:50%;
+  background:var(--hy-blue);color:#fff;display:grid;place-items:center;
+  box-shadow:0 10px 26px rgba(31,78,140,.4);opacity:0;pointer-events:none;
+  transition:.28s;z-index:300;font-size:18px;
+}
+.hy-totop.hy-totop-on{opacity:1;pointer-events:auto}
+.hy-totop:hover{background:var(--hy-blue-deep);transform:translateY(-3px)}
+
+/* 响应式 */
+@media(max-width:1024px){
+  .hy-hero-grid{grid-template-columns:1fr;gap:36px}
+  .hy-hero h1{font-size:42px}
+  .hy-stream,.hy-topic-grid{grid-template-columns:repeat(2,1fr)}
+  .hy-focus-grid{grid-template-columns:1fr}
+  .hy-focus-side{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .hy-partners{grid-template-columns:repeat(3,1fr)}
+  .hy-footer-grid{grid-template-columns:1fr 1fr}
+  .hy-intro-grid{grid-template-columns:1fr}
+  .hy-contact{grid-template-columns:1fr}
+}
+@media(max-width:820px){
+  .hy-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;background:#fff;
+    flex-direction:column;align-items:stretch;gap:0;padding:8px 14px 16px;
+    border-bottom:1px solid var(--hy-line);box-shadow:0 18px 30px rgba(21,34,56,.12);
+  }
+  .hy-nav.hy-nav-open{display:flex}
+  .hy-nav a{padding:11px 12px;border-radius:8px}
+  .hy-burger{display:grid}
+  .hy-header-in{position:relative;gap:12px;flex-wrap:nowrap}
+  .hy-search input{width:106px}
+  .hy-btn-ghost{display:none}
+  .hy-sticky{position:sticky}
+}
+@media(max-width:640px){
+  .hy-hero h1{font-size:34px;letter-spacing:1px}
+  .hy-hero-sub{font-size:16px}
+  .hy-h2{font-size:24px}
+  .hy-stats{grid-template-columns:1fr;gap:10px}
+  .hy-stream,.hy-topic-grid,.hy-creator-grid,.hy-story-grid,.hy-comment-grid{grid-template-columns:1fr}
+  .hy-focus-side{grid-template-columns:1fr}
+  .hy-wall{grid-template-columns:repeat(2,1fr)}
+  .hy-wall-item.hy-wall-big{grid-column:span 2;grid-row:span 1}
+  .hy-wall-item.hy-wall-wide{grid-column:span 2}
+  .hy-partners{grid-template-columns:repeat(2,1fr)}
+  .hy-footer-grid{grid-template-columns:1fr}
+  .hy-news-item{grid-template-columns:1fr;gap:6px}
+  .hy-search{display:none}
+  .hy-sec{padding:48px 0}
+  .hy-hero-float{left:6px;bottom:-16px;padding:10px 14px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶区：公告条 + 页头 -->
+<div class="hy-sticky">
+  <div class="hy-notice">
+    <span class="hy-notice-tag">官方发布</span>
+    <span class="hy-notice-track" id="hyNotice">花都影视官网新增《花都十二时辰》城市纪录企划 · 第四季创作者招募<b>报名进行中</b> · 本月精品内容更新 26 条</span>
+    <span class="hy-notice-time">11-19 更新</span>
+  </div>
+  <header class="hy-header">
+    <div class="hy-shell hy-header-in">
+      <a href="#hyTop" class="hy-brand" aria-label="花都影视官方网站首页">
+        <span class="hy-brand-mark">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M8 5.5 19 12 8 18.5Z" fill="#f5b841"/></svg>
+        </span>
+        <span class="hy-brand-name">花都影视<small>HUADU FILM</small></span>
+      </a>
+      <nav class="hy-nav" id="hyNav">
+        <a href="#hyTop" class="hy-nav-on">首页</a>
+        <a href="#hyFocus">焦点内容</a>
+        <a href="#hyStream">视频流</a>
+        <a href="#hyTopic">专题企划</a>
+        <a href="#hyCreator">创作者</a>
+        <a href="#hyNews">企业动态</a>
+        <a href="#hyFaq">帮助</a>
+        <a href="#hyContact">联系</a>
+      </nav>
+      <div class="hy-header-tools">
+        <div class="hy-search">
+          <input type="text" id="hySearchInput" placeholder="搜索花都影像内容" aria-label="搜索花都影像内容">
+          <button id="hySearchBtn" aria-label="搜索">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+          </button>
+        </div>
+        <a href="#hyContact" class="hy-btn-ghost">投稿入口</a>
+        <button class="hy-burger" id="hyBurger" aria-label="展开导航"><span></span></button>
+      </div>
+    </div>
+    <div class="hy-search-hit"><p id="hySearchHit"></p></div>
+  </header>
+</div>
+
+<!-- 首屏 -->
+<section class="hy-hero" id="hyTop">
+  <div class="hy-shell hy-hero-grid">
+    <div>
+      <span class="hy-hero-badge">● 花都影视官方网站 · 持续运营中</span>
+      <h1>花都影视</h1>
+      <p class="hy-hero-sub">城市影像品牌 · 原创精品内容生态</p>
+      <p class="hy-hero-desc">
+        作为深耕城市影像与在地文化的视频品牌，花都影视致力于为创作者与企业搭建高品质内容生态。
+        我们以真实、温暖、专业的镜头语言记录城市肌理、人物故事与生活方式，
+        用官方发布与原创企划持续输出值得信赖的精品内容，陪伴每一位影像爱好者共同成长。
+      </p>
+      <div class="hy-hero-actions">
+        <a href="#hyFocus" class="hy-btn-main">浏览焦点内容</a>
+        <a href="#hyCreator" class="hy-btn-line">认识创作者</a>
+        <button class="hy-btn-line" id="hyShareOpen">分享官网</button>
+      </div>
+      <div class="hy-stats">
+        <div class="hy-stat">
+          <div class="hy-stat-num">1,860<i>+</i></div>
+          <div class="hy-stat-label">原创影像作品</div>
+        </div>
+        <div class="hy-stat">
+          <div class="hy-stat-num">320<i>位</i></div>
+          <div class="hy-stat-label">签约与驻站创作者</div>
+        </div>
+        <div class="hy-stat">
+          <div class="hy-stat-num">4,500<i>万</i></div>
+          <div class="hy-stat-label">内容累计播放</div>
+        </div>
+      </div>
+    </div>
+    <div class="hy-hero-visual">
+      <div class="hy-hero-main-cover">
+        <svg viewBox="0 0 640 360" role="img" aria-label="花都影视品牌主视觉：晨雾中的城市天际线与江面灯火">
+          <defs>
+            <linearGradient id="hySky1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#0d2a4a"/><stop offset="0.55" stop-color="#2a5e96"/><stop offset="1" stop-color="#e9b26a"/>
+            </linearGradient>
+            <linearGradient id="hyWater1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#1b4066"/><stop offset="1" stop-color="#0b1c30"/>
+            </linearGradient>
+          </defs>
+          <rect width="640" height="360" fill="url(#hySky1)"/>
+          <circle cx="470" cy="118" r="42" fill="#ffd98c" opacity="0.9"/>
+          <circle cx="470" cy="118" r="72" fill="#ffd98c" opacity="0.16"/>
+          <path d="M0 250 L80 232 L120 240 L170 208 L212 226 L260 196 L300 214 L350 186 L410 216 L460 198 L520 224 L580 202 L640 226 L640 360 L0 360Z" fill="#12304f" opacity="0.95"/>
+          <g fill="#0b1f36" opacity="0.92">
+            <rect x="58" y="196" width="34" height="80"/><rect x="102" y="216" width="26" height="60"/>
+            <rect x="150" y="170" width="40" height="106"/><rect x="202" y="204" width="24" height="72"/>
+            <rect x="246" y="158" width="30" height="118"/><rect x="288" y="188" width="42" height="88"/>
+            <rect x="346" y="150" width="26" height="126"/><rect x="386" y="184" width="34" height="92"/>
+            <rect x="436" y="172" width="24" height="104"/><rect x="474" y="200" width="40" height="76"/>
+            <rect x="528" y="166" width="30" height="110"/><rect x="572" y="192" width="36" height="84"/>
+          </g>
+          <g fill="#ffd98c" opacity="0.85">
+            <rect x="66" y="212" width="6" height="6"/><rect x="80" y="228" width="6" height="6"/>
+            <rect x="158" y="186" width="6" height="6"/><rect x="172" y="202" width="6" height="6"/>
+            <rect x="254" y="176" width="6" height="6"/><rect x="296" y="204" width="6" height="6"/>
+            <rect x="352" y="168" width="6" height="6"/><rect x="394" y="200" width="6" height="6"/>
+            <rect x="482" y="216" width="6" height="6"/><rect x="536" y="182" width="6" height="6"/>
+          </g>
+          <rect y="272" width="640" height="88" fill="url(#hyWater1)"/>
+          <g stroke="#f5b841" stroke-width="2.4" opacity="0.55">
+            <path d="M120 292h70"/><path d="M240 304h96"/><path d="M400 296h84"/><path d="M510 312h60"/>
+          </g>
+          <g stroke="#bcd5f2" stroke-width="1.4" opacity="0.28">
+            <path d="M60 320h120"/><path d="M230 330h150"/><path d="M430 322h130"/>
+          </g>
+          <rect width="640" height="360" fill="url(#hySky1)" opacity="0"/>
+        </svg>
+      </div>
+      <div class="hy-hero-float">
+        <span class="hy-float-ico">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#1f4e8c"><path d="M8 5.5 19 12 8 18.5Z"/></svg>
+        </span>
+        <span>
+          <b>本周精品首发</b>
+          <small>《骑楼下的早茶时光》</small>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 关键词深度解析 -->
+<section class="hy-sec hy-sec-alt" id="hyIntro">
+  <div class="hy-shell">
+    <div class="hy-sec-head">
+      <span class="hy-eyebrow">品牌解析</span>
+      <h2 class="hy-h2">花都影视：把一座城的故事，拍成可持续的内容生态</h2>
+      <p class="hy-sec-lead">从品牌定位到内容方法论，理解花都影视官方网站为何坚持做“有出处”的影像。</p>
+    </div>
+    <div class="hy-intro-grid">
+      <div class="hy-intro-card">
+        <h3>一、<span>花都影视</span>是什么</h3>
+        <p>花都影视是一个以城市影像为核心、面向全网内容消费者的视频品牌。它既不是单纯的短视频账号集合，也不是传统意义上的影视制作公司，而是一个介于二者之间的内容生态平台：一端连接具备专业拍摄与叙事能力的创作者，另一端连接对城市生活、在地文化与真实故事有持续兴趣的观众与企业客户。</p>
+        <p>作为官方网站，花都影视在这里集中呈现品牌自有企划、驻站创作者作品、企业动态与官方发布信息。我们把“高清”“正版”“原创”写进日常生产流程，而不是写在宣传语里——每一条内容都有明确的创作者署名、拍摄时间与素材来源，观众可以顺着作品找到人，创作者可以顺着平台找到下一段合作。</p>
+        <p>品牌名中的“花都”，既指代花城般繁盛的城市面貌，也指代一种拍摄视角：把注意力放在街巷、骑楼、江岸、天台这些真实存在的日常场景里，用镜头替一座城保存细节。</p>
+      </div>
+      <div class="hy-intro-card">
+        <h3>二、我们如何理解<span>城市影像</span></h3>
+        <p>城市影像并非只是航拍大景与地标打卡。花都影视的选题标准有三条：第一，画面必须来自真实场景，拒绝摆拍式的“伪生活”；第二，叙事必须有人物，哪怕是三分钟的城市短片，也要有一个可以被记住的脸；第三，内容必须能被复用，成为这座城市的影像档案。</p>
+        <p>基于这三条标准，我们形成了相对稳定的内容结构：城市探索单元负责发现空间，人物访谈单元负责记录个体，实用攻略单元负责输出可被使用的方法，创作幕后单元负责展示影像生产的真实过程。四类内容互相支撑，构成了一个可持续运营的内容矩阵。</p>
+        <p>在这套矩阵之下，花都影视逐步沉淀出自己的口碑：既不追逐流量的瞬时爆发，也不放弃对品质的要求。行业领先并不靠规模堆叠，而靠长期稳定的交付能力。</p>
+      </div>
+      <div class="hy-intro-card hy-intro-wide">
+        <h3>三、平台机制：创作者、内容与社区如何彼此成就</h3>
+        <p>花都影视的创作者体系分为三个层级：签约创作者、驻站创作者与开放投稿者。签约创作者参与品牌企划的深度共建，拥有独立专栏与系列化内容排期；驻站创作者按月提交选题，由编辑部与制片组共同评估后进入制作流程；开放投稿者则通过官方投稿入口提交作品，优秀作品会被纳入月度精选并获得官方推荐位。</p>
+        <p>我们相信内容生态的活力来自“可预期的回报”。因此平台在流量分发之外，还提供设备支持、场地协调、后期协作与版权登记协助。对于企业客户，花都影视提供城市形象片、品牌故事片与系列短纪录的定制服务，由平台统一调度创作者资源，确保品质稳定、交付可控。这种“平台+创作者+企业”的三方结构，让内容生产不再是偶发行为，而是一条持续运转的流水线。</p>
+        <p>社区层面，花都影视保持着一个规模不大但活跃度高的讨论氛围。每月一次的主题挑战、每季度一次的线下放映与创作者沙龙，让“看视频的人”和“拍视频的人”能在同一个空间里对话。我们始终认为，社区不是流量池，而是信任的积累过程。用户至上不是一句口号，而是每一次选题会、每一条评论回复里都要兑现的承诺。</p>
+        <p>面向未来，花都影视将继续深耕垂直领域，把城市影像这一件事做深、做透。我们希望当人们想了解一座城市真实的模样时，会自然地想到花都影视；也希望当创作者想认真拍一部关于城市的作品时，会把这里当作值得信赖的起点。官方网站将持续更新精品内容、企业动态与官方发布信息，欢迎持续关注。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 焦点内容 -->
+<section class="hy-sec" id="hyFocus">
+  <div class="hy-shell">
+    <div class="hy-sec-head">
+      <span class="hy-eyebrow">焦点内容</span>
+      <h2 class="hy-h2">本周焦点：三条值得静下心来看的城市影像</h2>
+      <p class="hy-sec-lead">由花都影视编辑部与签约创作者共同推荐，覆盖纪录、访谈与实用攻略三种类型。</p>
+    </div>
+    <div class="hy-focus-grid">
+      <article class="hy-vcard">
+        <div class="hy-vcover">
+          <svg viewBox="0 0 640 360" role="img" aria-label="焦点视频封面：清晨骑楼街道上蒸笼升起的热气与行人">
+            <defs>
+              <linearGradient id="hyF1a" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f6c47a"/><stop offset="0.5" stop-color="#e58f52"/><stop offset="1" stop-color="#8c4a2c"/>
+              </linearGradient>
+            </defs>
+            <rect width="640" height="360" fill="url(#hyF1a)"/>
+            <g fill="#5c3520" opacity="0.85">
+              <rect x="0" y="80" width="180" height="280"/><rect x="460" y="60" width="180" height="300"/>
+            </g>
+            <g fill="#f0dcc0" opacity="0.9">
+              <rect x="24" y="120" width="52" height="90" rx="6"/><rect x="96" y="120" width="52" height="90" rx="6"/>
+              <rect x="492" y="104" width="52" height="90" rx="6"/><rect x="564" y="104" width="52" height="90" rx="6"/>
+            </g>
+            <rect x="150" y="210" width="340" height="150" fill="#3d2416" opacity="0.5"/>
+            <g fill="#fff3e0">
+              <ellipse cx="250" cy="250" rx="46" ry="12"/><ellipse cx="250" cy="238" rx="38" ry="10"/>
+              <ellipse cx="330" cy="262" rx="50" ry="13"/><ellipse cx="330" cy="248" rx="42" ry="11"/>
+              <ellipse cx="410" cy="252" rx="44" ry="12"/>
+            </g>
+            <g stroke="#fff8ec" stroke-width="5" stroke-linecap="round" opacity="0.6">
+              <path d="M250 220c-8-14 8-22 0-36"/><path d="M330 216c-8-14 8-22 0-36"/><path d="M410 222c-8-14 8-22 0-36"/>
+            </g>
+            <g fill="#2a1a10" opacity="0.9">
+              <circle cx="196" cy="286" r="15"/><rect x="182" y="300" width="28" height="56" rx="10"/>
+              <circle cx="452" cy="292" r="15"/><rect x="438" y="306" width="28" height="52" rx="10"/>
+            </g>
+          </svg>
+          <span class="hy-vcover-shade"></span>
+          <span class="hy-vtag">城市纪录</span>
+          <span class="hy-vplay"></span>
+          <span class="hy-vmeta"><span>12:48</span><span>官方首发</span></span>
+        </div>
+        <div class="hy-vbody">
+          <h3 class="hy-vtitle">骑楼下的早茶时光：一座城醒来的九十分钟</h3>
+          <p class="hy-vdesc">凌晨五点半的骑楼街，蒸笼开始冒气。我们跟拍三位老茶客与一对返乡开店的年轻夫妇，记录早茶如何成为城市生活的公共时钟。</p>
+          <div class="hy-vfoot">
+            <span class="hy-vauthor"><span class="hy-avatar hy-avatar-sm" style="background:#1f4e8c">林</span>林知远</span>
+            <span class="hy-vops">
+              <button class="hy-like-btn" data-count="1284"><span>♥</span> <b>1284</b></button>
+              <button class="hy-save-btn"><span>☆</span> 收藏</button>
+              <button class="hy-comment-open">评论</button>
+            </span>
+          </div>
+        </div>
+      </article>
+      <div class="hy-focus-side">
+        <article class="hy-vcard hy-focus-mini">
+          <div class="hy-vcover">
+            <svg viewBox="0 0 320 180" role="img" aria-label="焦点视频封面：夜色中天台上的青年导演与摄影机">
+              <defs><linearGradient id="hyF2a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b3a5c"/><stop offset="1" stop-color="#4b2c63"/></linearGradient></defs>
+              <rect width="320" height="180" fill="url(#hyF2a)"/>
+              <circle cx="252" cy="46" r="20" fill="#ffd98c" opacity="0.85"/>
+              <g fill="#0d1e33" opacity="0.9"><rect x="0" y="120" width="320" height="60"/><rect x="40" y="96" width="60" height="24"/><rect x="220" y="88" width="46" height="32"/></g>
+              <g fill="#0b1626"><circle cx="150" cy="106" r="14"/><rect x="136" y="120" width="28" height="46" rx="8"/></g>
+              <rect x="168" y="98" width="34" height="22" rx="4" fill="#e8f1fb" opacity="0.85"/>
+              <rect x="174" y="104" width="14" height="10" rx="2" fill="#1f4e8c"/>
+            </svg>
+            <span class="hy-vcover-shade"></span>
+            <span class="hy-vtag">人物访谈</span>
+          </div>
+          <div class="hy-vbody">
+            <h3 class="hy-vtitle">天台上的青年导演：用一台旧机器拍完整座城</h3>
+            <p class="hy-vdesc">三年、六十四卷磁带、一座城的夜景。导演陈木讲述他的独立创作路径。</p>
+            <span class="hy-vauthor"><span class="hy-avatar hy-avatar-sm" style="background:#a4632c">陈</span>陈木</span>
+          </div>
+        </article>
+        <article class="hy-vcard hy-focus-mini">
+          <div class="hy-vcover">
+            <svg viewBox="0 0 320 180" role="img" aria-label="焦点视频封面：老城区巷弄里的手写路牌与绿植">
+              <defs><linearGradient id="hyF3a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7fa88a"/><stop offset="1" stop-color="#2f5a45"/></linearGradient></defs>
+              <rect width="320" height="180" fill="url(#hyF3a)"/>
+              <rect x="0" y="0" width="110" height="180" fill="#e7e0cd"/>
+              <rect x="210" y="0" width="110" height="180" fill="#dcd3bd"/>
+              <rect x="110" y="0" width="100" height="180" fill="#3f6b54"/>
+              <rect x="126" y="36" width="68" height="92" rx="6" fill="#f3efe2"/>
+              <g fill="#2f5a45"><rect x="138" y="52" width="44" height="6" rx="3"/><rect x="138" y="66" width="34" height="6" rx="3"/><rect x="138" y="80" width="40" height="6" rx="3"/></g>
+              <g fill="#3f6b54"><ellipse cx="86" cy="140" rx="22" ry="30"/><ellipse cx="238" cy="132" rx="20" ry="26"/></g>
+              <rect x="76" y="146" width="20" height="34" fill="#8a5a3b"/>
+            </svg>
+            <span class="hy-vcover-shade"></span>
+            <span class="hy-vtag">实用攻略</span>
+          </div>
+          <div class="hy-vbody">
+            <h3 class="hy-vtitle">巷弄取景指南：十二条老街的拍摄时段与机位建议</h3>
+            <p class="hy-vdesc">从光线方向到人流节奏，一份可以被直接带出门的实用选题手册。</p>
+            <span class="hy-vauthor"><span class="hy-avatar hy-avatar-sm" style="background:#2f5a45">苏</span>苏晚照</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 视频流 -->
+<section class="hy-sec hy-sec-alt" id="hyStream">
+  <div class="hy-shell">
+    <div class="hy-sec-head">
+      <span class="hy-eyebrow">热门视频流</span>
+      <h2 class="hy-h2">来自官方的持续更新：本周精选视频</h2>
+      <p class="hy-sec-lead">按题材筛选，找到你今天想看的那一类城市影像。</p>
+    </div>
+    <div class="hy-filter-row" id="hyFilterRow">
+      <button class="hy-chip hy-chip-on" data-tag="all">全部</button>
+      <button class="hy-chip" data-tag="纪录">城市纪录</button>
+      <button class="hy-chip" data-tag="访谈">人物访谈</button>
+      <button class="hy-chip" data-tag="攻略">实用攻略</button>
+      <button class="hy-chip" data-tag="幕后">创作幕后</button>
+      <button class="hy-chip" data-tag="治愈">治愈影像</button>
+    </div>
+    <div class="hy-stream" id="hyStreamGrid">
+
+      <article class="hy-vcard" data-tag="纪录">
+        <div class="hy-vcover">
+          <svg viewBox="0 0 640 360" role="img" aria-label="视频封面：江边货船与黄昏桥拱的剪影">
+            <defs><linearGradient id="hyS1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7b267"/><stop offset="0.6" stop-color="#d97a4a"/><stop offset="1" stop-color="#5d3a4a"/></linearGradient></defs>
+            <rect width="640" height="360" fill="url(#hyS1)"/>
+            <circle cx="160" cy="120" r="40" fill="#fff2cd" opacity="0.9"/>
+            <path d="M0 240 Q160 120 320 240 T640 240 L640 360 L0 360Z" fill="#2c3e50" opacity="0.8"/>
+            <path d="M300 360 Q320 180 340 360" fill="none" stroke="#24343f" stroke-width="16"/>
+            <path d="M360 360 Q400 180 440 360" fill="none" stroke="#24343f" stroke-width="16"/>
+            <rect x="60" y="300" width="130" height="26" rx="6" fill="#1d2b38"/>
+            <rect x="92" y="272" width="46" height="30" rx="4" fill="#31424f"/>
+            <rect y="326" width="640" height="34" fill="#17242f"/>
+          </svg>
+          <span class="hy-vcover-shade"></span>
+          <span class="hy-vtag">城市纪录</span>
+        </div>
+        <div class="hy-vbody">
+          <h3 class="hy-vtitle">江上的最后一班货船</h3>
+          <p class="hy-vdesc">跟船七十二小时，记录一群把水路当作通勤线的人，以及他们对“靠岸”的理解。</p>
+          <div class="hy-vfoot">
+            <span class="hy-vauthor"><span class="hy-avatar hy-avatar-sm" style="background:#b3541e">周</span>周渡</span>
+            <span class="hy-vops">
+              <button class="hy-like-btn" data-count="842"><span>♥</span> <b>842</b></button>
+              <button class="hy-save-btn"><span>☆</span> 收藏</button>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <article class="hy-vcard" data-tag="访谈">
+        <div class="hy-vcover">
+          <svg viewBox="0 0 640 360" role="img" aria-label="视频封面：录音棚内的调音台与暖色灯光">
+            <rect width="640" height="360" fill="#241b28"/>
+            <rect x="0" y="0" width="640" height="360" fill="url(#none)"/>
+            <g fill="#3b2a44"><rect x="0" y="200" width="640" height="160"/></g>
+            <g fill="#6b4f76" opacity="0.6"><circle cx="90" cy="70" r="30"/><circle cx="540" cy="60" r="24"/></g>
+            <rect x="80" y="214" width="480" height="80" rx="10" fill="#1a1220"/>
+            <g fill="#f5b841">
+              <rect x="110" y="232" width="10" height="44" rx="5"/><rect x="140" y="242" width="10" height="24" rx="5"/>
+              <rect x="170" y="228" width="10" height="52" rx="5"/><rect x="200" y="246" width="10" height="20" rx="5"/>
+              <rect x="230" y="236" width="10" height="40" rx="5"/><rect x="260" y="250" width="10" height="16" rx="5"/>
+              <rect x="290" y="230" width="10" height="48" rx="5"/><rect x="320" y="244" width="10" height="24" rx="5"/>
+              <rect x="350" y="234" width="10" height="42" rx="5"/><rect x="380" y="248" width="10" height="18" rx="5"/>
+              <rect x="410" y="232" width="10" height="46" rx="5"/><rect x="440" y="242" width="10" height="26" rx="5"/>
+              <rect x="470" y="236" width="10" height="38" rx="5"/>
+            </g>
+            <circle cx="510" cy="254" r="16" fill="none" stroke="#f5b841" stroke-width="4"/>
+          </svg>
+          <span class="hy-vcover-shade"></span>
+          <span class="hy-vtag">人物访谈</span>
+        </div>
+        <div class="hy-vbody">
+          <h3 class="hy-vtitle">声音采集师：把城市的噪音做成一张专辑</h3>
+          <p class="hy-vdesc">菜市场、地铁进站、雨落铁皮棚，他把这些声音编成了十二首城市音景。</p>
+          <div class="hy-vfoot">
+            <span class="hy-vauthor"><span class="hy-avatar hy-avatar-sm" style="background:#6b4f76">何</span>何录音</span>
+            <span class="hy-vops">
+              <button class="hy-like-btn" data-count="673"><span>♥</span> <b>673</b></button>
+              <button class="hy-save-btn"><span>☆</span> 收藏</button>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <article class="hy-vcard" data-tag="幕后">
+        <div class="hy-vcover">
+          <svg viewBox="0 0 640 360" role="img" aria-label="视频封面：雨中撑伞的拍摄团队与反光板">
+            <defs><linearGradient id="hyS3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#365a75"/><stop offset="1" stop-color="#14293c"/></linearGradient></defs>
+            <rect width="640" height="360" fill="url(#hyS3)"/>
+            <g stroke="#9dc4e0" stroke-width="2" opacity="0.5">
+              <path d="M60 0v120"/><path d="M140 0v90"/><path d="M230 0v140"/><path d="M330 0v100"/>
+              <path d="M430 0v130"/><path d="M520 0v96"/><path d="M600 0v120"/>
+            </g>
+            <rect x="120" y="170" width="120" height="80" rx="10" fill="#e8f1fb" opacity="0.9"/>
+            <rect x="132" y="184" width="96" height="52" rx="6" fill="#7aa6cc"/>
+            <g fill="#0f2136"><circle cx="340" cy="212" r="18"/><rect x="322" y="232" width="36" height="90" rx="12"/></g>
+            <g fill="#0f2136"><circle cx="430" cy="222" r="16"/><rect x="414" y="240" width="32" height="80" rx="10"/></g>
+            <path d="M300 176 a44 44 0 0 1 88 0Z" fill="#f5b841"/>
+            <path d="M344 176v60" stroke="#f5b841" stroke-width="4"/>
+            <rect y="316" width="640" height="44" fill="#0c1a28"/>
+          </svg>
+          <span class="hy-vcover-shade"></span>
+          <span class="hy-vtag">创作幕后</span>
+        </div>
+        <div class="hy-vbody">
+          <h3 class="hy-vtitle">一场雨戏的三十七次重来</h3>
+          <p class="hy-vdesc">器材、天气、演员状态，短片《雨停之前》剧组如何用一天时间解决三个变量。</p>
+          <div class="hy-vfoot">
+            <span class="hy-vauthor"><span class="hy-avatar hy-avatar-sm" style="background:#365a75">许</span>许镜</span>
+            <span class="hy-vops">
+              <button class="hy-like-btn" data-count="1190"><span>♥</span> <b>1190</b></button>
+              <button class="hy-save-btn"><span>☆</span> 收藏</button>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <article class="hy-vcard" data-tag="治愈">
+        <div class="hy-vcover">
+          <svg viewBox="0 0 640 360" role="img" aria-label="视频封面：午后阳光下的猫与窗台上的绿植">
+            <rect width="640" height="360" fill="#f4e6cf"/>
+            <rect x="380" y="0" width="260" height="360" fill="#e2cfae"/>
+            <rect x="420" y="40" width="180" height="200" rx="8" fill="#cfe3ef"/>
+            <g stroke="#b08d5f" stroke-width="6"><path d="M470 0v360"/><path d="M510 0v360"/></g>
+            <path d="M0 260 Q200 200 400 260 L400 360 L0 360Z" fill="#d8b98c"/>
+            <g fill="#5c4430"><ellipse cx="220" cy="280" rx="72" ry="42"/><circle cx="284" cy="240" r="34"/>
+              <path d="M266 210l10 26 22-16" fill="#5c4430"/><path d="M306 210l-8 28 22-18" fill="#5c4430"/></g>
+            <g fill="#7ba36a"><ellipse cx="96" cy="196" rx="26" ry="38"/><ellipse cx="130" cy="210" rx="20" ry="30"/></g>
+            <rect x="80" y="230" width="56" height="46" rx="6" fill="#b0754a"/>
+            <circle cx="380" cy="120" r="80" fill="#ffe9b8" opacity="0.6"/>
+          </svg>
+          <span class="hy-vcover-shade"></span>
+          <span class="hy-vtag">治愈影像</span>
+        </div>
+        <div class="hy-vbody">
+          <h3 class="hy-vtitle">午后三点，猫和它的固定窗台</h3>
+          <p class="hy-vdesc">一条没有旁白的短片。只记录光移动的速度，和一只猫改变姿势的节奏。</p>
+          <div class="hy-vfoot">
+            <span class="hy-vauthor"><span class="hy-avatar hy-avatar-sm" style="background:#a3803f">林</span>林知远</span>
+            <span class="hy-vops">
+              <button class="hy-like-btn" data-count="2056"><span>♥</span> <b>2056</b></button>
+              <button class="hy-save-btn"><span>☆</span> 收藏</button>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <article class="hy-vcard" data-tag="攻略">
+        <div class="hy-vcover">
+          <svg viewBox="0 0 640 360" role="img" aria-label="视频封面：摊开的手绘城市地图与彩色标记笔">
+            <rect width="640" height="360" fill="#e9eef2"/>
+            <g transform="rotate(-4 320 180)">
+              <rect x="120" y="60" width="400" height="250" rx="8" fill="#fdf8ea" stroke="#d3c5a4" stroke-width="3"/>
+              <g stroke="#b8a77f" stroke-width="2" opacity="0.7">
+                <path d="M150 110h340"/><path d="M150 160h340"/><path d="M150 210h340"/><path d="M150 260h260"/>
+              </g>
+              <g stroke="#3f7fb8" stroke-width="5" stroke-linecap="round" fill="none">
+                <path d="M170 280 Q210 220 260 240 T350 190"/>
+              </g>
+              <g fill="#f5b841"><circle cx="260" cy="240" r="9"/><circle cx="350" cy="190" r="9"/></g>
+              <g fill="#d0453f"><circle cx="200" cy="130" r="9"/><circle cx="420" cy="250" r="9"/></g>
+              <g stroke="#d0453f" stroke-width="3" fill="none"><circle cx="200" cy="130" r="20"/><circle cx="420" cy="250" r="20"/></g>
+            </g>
+            <rect x="470" y="270" width="110" height="16" rx="8" fill="#a4632c" transform="rotate(18 525 278)"/>
+          </svg>
+          <span class="hy-vcover-shade"></span>
+          <span class="hy-vtag">实用攻略</span>
+        </div>
+        <div class="hy-vbody">
+          <h3 class="hy-vtitle">一张地图走完老城：八条拍摄动线与时间表</h3>
+          <p class="hy-vdesc">从日出到夜灯，按小时拆解的动线安排，附每个机位的朝阳与背光提示。</p>
+          <div class="hy-vfoot">
+            <span class="hy-vauthor"><span class="hy-avatar hy-avatar-sm" style="background:#2f5a45">苏</span>苏晚照</span>
+            <span class="hy-vops">
+              <button class="hy-like-btn" data-count="534"><span>♥</span> <b>534</b></button>
+              <button class="hy-save-btn"><span>☆</span> 收藏</button>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <article class="hy-vcard" data-tag="纪录">
+        <div class="hy-vcover">
+          <svg viewBox="0 0 640 360" role="img" aria-label="视频封面：菜市场里的鱼摊与暖色灯光下的摊主">
+            <defs><linearGradient id="hyS6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3d5a66"/><stop offset="1" stop-color="#1f333c"/></linearGradient></defs>
+            <rect width="640" height="360" fill="url(#hyS6)"/>
+            <g fill="#f5b841" opacity="0.85"><circle cx="120" cy="66" r="18"/><circle cx="320" cy="56" r="18"/><circle cx="520" cy="66" r="18"/></g>
+            <g stroke="#f5b841" stroke-width="2" opacity="0.4"><path d="M120 84v34"/><path d="M320 74v34"/><path d="M520 84v34"/></g>
+            <rect x="40" y="220" width="560" height="140" rx="10" fill="#2c4652"/>
+            <rect x="40" y="196" width="560" height="26" rx="8" fill="#152832"/>
+            <g fill="#bfd9e6">
+              <ellipse cx="140" cy="206" rx="42" ry="14"/><ellipse cx="250" cy="208" rx="36" ry="12"/>
+              <ellipse cx="360" cy="205" rx="44" ry="14"/><ellipse cx="480" cy="208" rx="34" ry="12"/>
+            </g>
+            <g fill="#0f1f27"><circle cx="200" cy="150" r="24"/><rect x="178" y="172" width="44" height="60" rx="14"/>
+              <circle cx="450" cy="156" r="22"/><rect x="430" y="176" width="40" height="56" rx="12"/></g>
+            <rect y="336" width="640" height="24" fill="#0b171e"/>
+          </svg>
+          <span class="hy-vcover-shade"></span>
+          <span class="hy-vtag">城市纪录</span>
+        </div>
+        <div class="hy-vbody">
+          <h3 class="hy-vtitle">凌晨四点的菜市场：一百个摊位的开门顺序</h3>
+          <p class="hy-vdesc">谁第一个开灯，谁最后一个收摊。一条纪录短片，讲述城市最早的公共空间。</p>
+          <div class="hy-vfoot">
+            <span class="hy-vauthor"><span class="hy-avatar hy-avatar-sm" style="background:#3d5a66">周</span>周渡</span>
+            <span class="hy-vops">
+              <button class="hy-like-btn" data-count="967"><span>♥</span> <b>967</b></button>
+              <button class="hy-save-btn"><span>☆</span> 收藏</button>
+            </span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <div class="hy-stream-more">
+      <button class="hy-btn-more" id="hyMoreBtn">查看更多精品内容</button>
+    </div>
+  </div>
+</section>
+
+<!-- 专题企划 -->
+<section class="hy-sec" id="hyTopic">
+  <div class="hy-shell">
+    <div class="hy-sec-head">
+      <span class="hy-eyebrow">专题企划</span>
+      <h2 class="hy-h2">四个正在进行的品牌企划</h2>
+      <p class="hy-sec-lead">由花都影视官方发起，联合驻站创作者共同完成，欢迎报名参与。</p>
+    </div>
+    <div class="hy-topic-grid">
+
+      <article class="hy-topic">
+        <div class="hy-topic-cover">
+          <svg viewBox="0 0 640 360" role="img" aria-label="专题封面：花都十二时辰，钟表齿轮与城市轮廓叠加">
+            <rect width="640" height="360" fill="#12294d"/>
+            <circle cx="320" cy="180" r="120" fill="none" stroke="#f5b841" stroke-width="3" opacity="0.6"/>
+            <circle cx="320" cy="180" r="86" fill="none" stroke="#f5b841" stroke-width="2" opacity="0.4"/>
+            <g stroke="#f5b841" stroke-width="3" opacity="0.8">
+              <path d="M320 180V104"/><path d="M320 180l52 46"/>
+            </g>
+            <circle cx="320" cy="180" r="9" fill="#f5b841"/>
+            <g fill="#3d6c9e" opacity="0.75">
+              <rect x="60" y="270" width="34" height="90"/><rect x="108" y="240" width="26" height="120"/>
+              <rect x="150" y="290" width="40" height="70"/><rect x="450" y="260" width="30" height="100"/>
+              <rect x="500" y="232" width="26" height="128"/><rect x="544" y="284" width="38" height="76"/>
+            </g>
+          </svg>
+          <span class="hy-topic-state">更新中</span>
+        </div>
+        <div class="hy-topic-body">
+          <h3>花都十二时辰</h3>
+          <p>以十二个时辰为线索，记录城市一天的呼吸节奏。已上线七集，覆盖清晨茶楼、午后巷弄与深夜便利店。</p>
+          <a href="#hyContact" class="hy-topic-link">参与共创 →</a>
+        </div>
+      </article>
+
+      <article class="hy-topic">
+        <div class="hy-topic-cover">
+          <svg viewBox="0 0 640 360" role="img" aria-label="专题封面：老建筑窗棂与胶片边框构成的城市图像">
+            <rect width="640" height="360" fill="#e4d8c3"/>
+            <g fill="#8a6a45"><rect x="0" y="0" width="640" height="24"/><rect x="0" y="336" width="640" height="24"/></g>
+            <g stroke="#8a6a45" stroke-width="10" fill="none">
+              <rect x="60" y="60" width="200" height="240"/><rect x="300" y="60" width="120" height="240"/><rect x="450" y="60" width="130" height="240"/>
+              <path d="M60 180h200M160 60v240"/><path d="M300 140h120M360 60v240"/><path d="M450 200h130M515 60v240"/>
+            </g>
+            <g fill="#2f5a45" opacity="0.55"><rect x="76" y="76" width="168" height="90"/><rect x="316" y="76" width="88" height="52"/></g>
+            <g fill="#b3541e" opacity="0.5"><rect x="466" y="216" width="98" height="68"/></g>
+          </svg>
+          <span class="hy-topic-state">已完结</span>
+        </div>
+        <div class="hy-topic-body">
+          <h3>窗前有一座城</h3>
+          <p>邀请四十位居民从自家窗口向外拍摄一分钟，拼成一部关于居住、光线与邻里的共同影像。</p>
+          <a href="#hyStream" class="hy-topic-link">查看全片 →</a>
+        </div>
+      </article>
+
+      <article class="hy-topic">
+        <div class="hy-topic-cover">
+          <svg viewBox="0 0 640 360" role="img" aria-label="专题封面：手绘分镜格与场记板符号">
+            <rect width="640" height="360" fill="#f2ede2"/>
+            <g stroke="#b8a77f" stroke-width="3" fill="#fdf9ef">
+              <rect x="50" y="60" width="150" height="100" rx="6"/><rect x="230" y="60" width="150" height="100" rx="6"/>
+              <rect x="410" y="60" width="150" height="100" rx="6"/><rect x="50" y="190" width="150" height="100" rx="6"/>
+              <rect x="230" y="190" width="150" height="100" rx="6"/><rect x="410" y="190" width="150" height="100" rx="6"/>
+            </g>
+            <g fill="#1f4e8c" opacity="0.75">
+              <circle cx="125" cy="110" r="18"/><rect x="280" y="90" width="50" height="40" rx="4"/>
+              <path d="M460 140l40-50 30 50z"/><rect x="90" y="230" width="70" height="26" rx="4"/>
+              <path d="M250 260h110"/><path d="M250 274h80"/>
+            </g>
+            <g fill="#d0453f"><rect x="500" y="230" width="46" height="26" rx="4"/></g>
+          </svg>
+          <span class="hy-topic-state">招募中</span>
+        </div>
+        <div class="hy-topic-body">
+          <h3>第一部长片计划</h3>
+          <p>面向新锐创作者的城市题材长片扶持计划，提供前期开发、设备与后期资源，本年度开放八个名额。</p>
+          <a href="#hyContact" class="hy-topic-link">了解报名 →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 创作者矩阵 -->
+<section class="hy-sec hy-sec-alt" id="hyCreator">
+  <div class="hy-shell">
+    <div class="hy-sec-head">
+      <span class="hy-eyebrow">创作者矩阵</span>
+      <h2 class="hy-h2">把镜头交给值得信赖的人</h2>
+      <p class="hy-sec-lead">他们构成花都影视的内容生态底座，也是这个社区最真实的声音。</p>
+    </div>
+    <div class="hy-creator-grid">
+
+      <article class="hy-creator">
+        <span class="hy-avatar" style="background:linear-gradient(140deg,#1f4e8c,#2a6cb4)">林</span>
+        <div class="hy-creator-info">
+          <div class="hy-creator-name">林知远 <span class="hy-creator-badge">签约创作者</span></div>
+          <div class="hy-creator-field">城市纪录 · 生活影像</div>
+          <p class="hy-creator-desc">习惯用长镜头等待一个瞬间发生。代表作《骑楼下的早茶时光》，作品以克制的旁白与耐心的观察著称。</p>
+          <div class="hy-creator-nums"><span>作品 <b>86</b></span><span>关注 <b>12.4万</b></span></div>
+          <button class="hy-creator-btn hy-author-open" data-author="林知远" data-field="城市纪录 · 生活影像" data-bio="花都影视签约创作者，拍摄城市纪录七年，擅长用长镜头与自然光记录日常。主张“先等，再拍”。">查看档案</button>
+        </div>
+      </article>
+
+      <article class="hy-creator">
+        <span class="hy-avatar" style="background:linear-gradient(140deg,#a4632c,#d08a4a)">陈</span>
+        <div class="hy-creator-info">
+          <div class="hy-creator-name">陈木 <span class="hy-creator-badge">驻站创作者</span></div>
+          <div class="hy-creator-field">独立叙事 · 夜景</div>
+          <p class="hy-creator-desc">独立导演，坚持使用手持与自然光源。其夜景系列在社区内引发大量讨论，被视为城市影像的新表达。</p>
+          <div class="hy-creator-nums"><span>作品 <b>42</b></span><span>关注 <b>8.7万</b></span></div>
+          <button class="hy-creator-btn hy-author-open" data-author="陈木" data-field="独立叙事 · 夜景" data-bio="独立导演，花都影视驻站创作者。三年完成六十四卷磁带素材，作品强调现场感与不完美。">查看档案</button>
+        </div>
+      </article>
+
+      <article class="hy-creator">
+        <span class="hy-avatar" style="background:linear-gradient(140deg,#2f5a45,#7fa88a)">苏</span>
+        <div class="hy-creator-info">
+          <div class="hy-creator-name">苏晚照 <span class="hy-creator-badge">签约创作者</span></div>
+          <div class="hy-creator-field">实用攻略 · 拍摄方法</div>
+          <p class="hy-creator-desc">擅长把复杂的拍摄知识拆成可执行的步骤。她的取景指南系列被许多新人创作者称为“入门第一课”。</p>
+          <div class="hy-creator-nums"><span>作品 <b>124</b></span><span>关注 <b>16.1万</b></span></div>
+          <button class="hy-creator-btn hy-author-open" data-author="苏晚照" data-field="实用攻略 · 拍摄方法" data-bio="影像教程作者，花都影视签约创作者。相信方法可以被学习，审美可以被训练。">查看档案</button>
+        </div>
+      </article>
+
+      <article class="hy-creator">
+        <span class="hy-avatar" style="background:linear-gradient(140deg,#6b4f76,#a27db0)">何</span>
+        <div class="hy-creator-info">
+          <div class="hy-creator-name">何录音 <span class="hy-creator-badge">驻站创作者</span></div>
+          <div class="hy-creator-field">声音采集 · 音景</div>
+          <p class="hy-creator-desc">从声音的角度理解城市。他的音景专辑把菜市场、地铁与雨声重新编排，让观众听见平时忽略的层次。</p>
+          <div class="hy-creator-nums"><span>作品 <b>57</b></span><span>关注 <b>6.3万</b></span></div>
+          <button class="hy-creator-btn hy-author-open" data-author="何录音" data-field="声音采集 · 音景" data-bio="声音设计师，花都影视驻站创作者。长期采集城市环境音，专注声音叙事与影像的结合。">查看档案</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 故事随笔 -->
+<section class="hy-sec" id="hyStory">
+  <div class="hy-shell">
+    <div class="hy-sec-head">
+      <span class="hy-eyebrow">故事与随笔</span>
+      <h2 class="hy-h2">镜头之外，创作者写下的几句话</h2>
+      <p class="hy-sec-lead">影像负责呈现，文字负责留下余温。</p>
+    </div>
+    <div class="hy-story-grid">
+      <article class="hy-story">
+        <h3>等一场恰到好处的雨</h3>
+        <p>拍雨戏那天，天气预报说下午三点有阵雨。我们提前两小时架好机位，结果云飘过去就散了。第七次重来时，演员已经湿透，所有人都安静下来。后来那一条没用上灯光补光，因为天色刚好暗到合适。剪片子时我才明白，我们能做的只是把机器架好，然后等。</p>
+        <div class="hy-story-by">— 许镜 · 《雨停之前》导演手记</div>
+      </article>
+      <article class="hy-story">
+        <h3>关于一条巷子的记忆</h3>
+        <p>那条巷子只有一百二十米，我拍了三年。第一年拍的是晾衣绳，第二年拍的是拆掉的招牌，第三年拍的是一个搬回来的老人。观众留言说看不出有什么变化，但我知道，变化藏在细节里。城市影像的意义大概就在这里：它不负责结论，只负责保存。</p>
+        <div class="hy-story-by">— 林知远 · 驻站随笔</div>
+      </article>
+      <article class="hy-story">
+        <h3>把噪音变成作品</h3>
+        <p>刚开始采集声音时，我总觉得要找到“干净”的环境音。后来发现，城市从来没有干净的声音，菜市场的讨价还价、地铁进站的刹车声，都是这座城的语调。把它们放进同一张专辑时，我第一次觉得，噪音也是一种可以被倾听的语言。</p>
+        <div class="hy-story-by">— 何录音 · 音景创作谈</div>
+      </article>
+      <article class="hy-story">
+        <h3>给新人的三条建议</h3>
+        <p>第一，先完成再完美，一部拍完的短片胜过十个停在脚本阶段的构思。第二，找到你真正熟悉的场景，熟悉的地方才有细节。第三，把每一次投稿都当成一次对话，认真读评论，认真回复。花都影视的社区不大，但每一位认真创作的人都值得被看见。</p>
+        <div class="hy-story-by">— 苏晚照 · 创作者分享</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 影像墙 -->
+<section class="hy-sec hy-sec-alt" id="hyWall">
+  <div class="hy-shell">
+    <div class="hy-sec-head">
+      <span class="hy-eyebrow">用户作品墙</span>
+      <h2 class="hy-h2">来自社区的影像片段</h2>
+      <p class="hy-sec-lead">由开放投稿者上传，经编辑部筛选后展示。</p>
+    </div>
+    <div class="hy-wall">
+
+      <div class="hy-wall-item hy-wall-big">
+        <svg viewBox="0 0 640 640" role="img" aria-label="作品墙大图：清晨薄雾中的城市高架与骑行者">
+          <defs><linearGradient id="hyW1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b4a6b"/><stop offset="1" stop-color="#d8b08a"/></linearGradient></defs>
+          <rect width="640" height="640" fill="url(#hyW1)"/>
+          <circle cx="460" cy="170" r="70" fill="#ffe9b8" opacity="0.75"/>
+          <g fill="#1b3350" opacity="0.9">
+            <rect x="0" y="360" width="90" height="280"/><rect x="110" y="300" width="70" height="340"/>
+            <rect x="200" y="400" width="80" height="240"/><rect x="300" y="280" width="60" height="360"/>
+            <rect x="380" y="380" width="90" height="260"/><rect x="490" y="330" width="70" height="310"/>
+            <rect x="575" y="420" width="65" height="220"/>
+          </g>
+          <path d="M0 520 Q160 460 320 520 T640 500" stroke="#f5b841" stroke-width="4" fill="none" opacity="0.7"/>
+          <g fill="#0f2033"><circle cx="300" cy="470" r="16"/><path d="M280 494l20-16 20 16 10 40h-60z"/></g>
+          <circle cx="292" cy="516" r="16" fill="none" stroke="#0f2033" stroke-width="6"/>
+          <circle cx="332" cy="516" r="16" fill="none" stroke="#0f2033" stroke-width="6"/>
+        </svg>
+        <span class="hy-wall-cap">《晨雾高架》 · 投稿者 阿野</span>
+      </div>
+
+      <div class="hy-wall-item">
+        <svg viewBox="0 0 320 320" role="img" aria-label="作品墙图：夜市摊位上的糖水与暖黄灯泡">
+          <rect width="320" height="320" fill="#3a2418"/>
+          <circle cx="90" cy="70" r="26" fill="#ffd98c"/>
+          <circle cx="240" cy="60" r="20" fill="#ffd98c" opacity="0.7"/>
+          <rect x="0" y="180" width="320" height="140" fill="#5a3a22"/>
+          <g fill="#e8c9a0"><ellipse cx="90" cy="192" rx="42" ry="14"/><ellipse cx="210" cy="196" rx="36" ry="12"/></g>
+          <g fill="#f5b841"><ellipse cx="90" cy="184" rx="34" ry="10"/><ellipse cx="210" cy="188" rx="28" ry="9"/></g>
+          <rect x="140" y="120" width="8" height="60" fill="#8a5a3b"/>
+        </svg>
+        <span class="hy-wall-cap">《糖水铺的一盏灯》</span>
+      </div>
+
+      <div class="hy-wall-item">
+        <svg viewBox="0 0 320 320" role="img" aria-label="作品墙图：老式公交车窗外的树影流动">
+          <rect width="320" height="320" fill="#c9d8c4"/>
+          <rect x="30" y="40" width="260" height="200" rx="14" fill="#2f3f35"/>
+          <rect x="48" y="58" width="220" height="164" rx="8" fill="#a8c6b2"/>
+          <g fill="#3f6b54" opacity="0.7"><ellipse cx="110" cy="170" rx="40" ry="70"/><ellipse cx="220" cy="160" rx="34" ry="60"/></g>
+          <rect x="30" y="252" width="260" height="34" rx="8" fill="#1f2d26"/>
+          <circle cx="90" cy="286" r="18" fill="#121c17"/><circle cx="230" cy="286" r="18" fill="#121c17"/>
+        </svg>
+        <span class="hy-wall-cap">《车窗里的夏天》</span>
+      </div>
+
+      <div class="hy-wall-item hy-wall-wide">
+        <svg viewBox="0 0 640 300" role="img" aria-label="作品墙宽图：雨后街道倒影与行人剪影">
+          <rect width="640" height="300" fill="#4a5f74"/>
+          <rect x="0" y="0" width="640" height="150" fill="#6b8199"/>
+          <g fill="#2b3a4a"><rect x="40" y="30" width="80" height="120"/><rect x="150" y="60" width="60" height="90"/>
+            <rect x="440" y="40" width="76" height="110"/><rect x="540" y="70" width="60" height="80"/></g>
+          <rect y="150" width="640" height="150" fill="#3a4c5e"/>
+          <g stroke="#9db6cc" stroke-width="2" opacity="0.5">
+            <path d="M120 160v80"/><path d="M200 158v120"/><path d="M470 160v90"/><path d="M560 158v110"/>
+          </g>
+          <g fill="#121e2a"><circle cx="300" cy="180" r="14"/><rect x="288" y="196" width="24" height="60" rx="9"/>
+            <circle cx="360" cy="192" r="12"/><rect x="349" y="206" width="22" height="52" rx="8"/></g>
+          <path d="M250 300 Q260 240 300 240" stroke="#f5b841" stroke-width="3" fill="none" opacity="0.6"/>
+        </svg>
+        <span class="hy-wall-cap">《雨停之后，街面变成镜子》 · 投稿者 小满</span>
+      </div>
+
+      <div class="hy-wall-item">
+        <svg viewBox="0 0 320 320" role="img" aria-label="作品墙图：天台晾衣绳与蓝白床单在风中摆动">
+          <rect width="320" height="320" fill="#cfe3ef"/>
+          <rect x="0" y="230" width="320" height="90" fill="#a9b7c0"/>
+          <path d="M20 90 Q160 60 300 90" stroke="#8a9aa6" stroke-width="3" fill="none"/>
+          <g><rect x="60" y="86" width="70" height="110" rx="4" fill="#f4f7fa"/><rect x="180" y="80" width="80" height="120" rx="4" fill="#e8f1fb"/></g>
+          <g stroke="#b6c6d2" stroke-width="2"><path d="M70 140h50"/><path d="M190 140h60"/></g>
+          <circle cx="270" cy="40" r="22" fill="#ffe9b8"/>
+        </svg>
+        <span class="hy-wall-cap">《天台上的风》</span>
+      </div>
+
+      <div class="hy-wall-item">
+        <svg viewBox="0 0 320 320" role="img" aria-label="作品墙图：旧书店角落的台灯与书脊排列">
+          <rect width="320" height="320" fill="#3f3126"/>
+          <rect x="0" y="200" width="320" height="120" fill="#57422f"/>
+          <g fill="#a85a3c"><rect x="20" y="150" width="18" height="50"/><rect x="44" y="140" width="14" height="60"/>
+            <rect x="64" y="156" width="20" height="44"/></g>
+          <g fill="#6b8f74"><rect x="100" y="146" width="16" height="54"/><rect x="122" y="154" width="20" height="46"/>
+            <rect x="148" y="142" width="14" height="58"/></g>
+          <g fill="#c7b18a"><rect x="180" y="152" width="18" height="48"/><rect x="204" y="144" width="14" height="56"/></g>
+          <rect x="248" y="120" width="44" height="80" rx="6" fill="#f0d9a8"/>
+          <path d="M270 120v-26" stroke="#8a6a45" stroke-width="5"/>
+        </svg>
+        <span class="hy-wall-cap">《打烊前的半小时》</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 用户评价 + 数据榜单 -->
+<section class="hy-sec" id="hyReview">
+  <div class="hy-shell">
+    <div class="hy-sec-head">
+      <span class="hy-eyebrow">口碑与评价</span>
+      <h2 class="hy-h2">他们这样评价花都影视</h2>
+      <p class="hy-sec-lead">来自社区用户、合作企业与创作者的真实反馈。</p>
+    </div>
+    <div class="hy-comment-grid">
+      <div class="hy-comment">
+        <div class="hy-comment-top">
+          <span class="hy-avatar hy-avatar-sm" style="background:#1f4e8c">顾</span>
+          <span class="hy-comment-who"><b>顾晓</b><small>社区用户 · 加入 2 年</small></span>
+          <span class="hy-comment-stars">★★★★★</span>
+        </div>
+        <p>最喜欢这里的节奏，不催你看完，也不急着给结论。一个十分钟的短片可以慢慢铺开，看完之后会想出门走一走。这在现在的视频平台里很少见。</p>
+      </div>
+      <div class="hy-comment">
+        <div class="hy-comment-top">
+          <span class="hy-avatar hy-avatar-sm" style="background:#2f5a45">邵</span>
+          <span class="hy-comment-who"><b>邵一鸣</b><small>品牌合作方 · 内容负责人</small></span>
+          <span class="hy-comment-stars">★★★★★</span>
+        </div>
+        <p>我们与花都影视合作了一支城市形象片，从选题会到成片交付大概六周。流程清晰，沟通直接，创作者的专业度超出预期，后续还会继续合作。</p>
+      </div>
+      <div class="hy-comment">
+        <div class="hy-comment-top">
+          <span class="hy-avatar hy-avatar-sm" style="background:#a4632c">唐</span>
+          <span class="hy-comment-who"><b>唐豆</b><small>开放投稿者</small></span>
+          <span class="hy-comment-stars">★★★★☆</span>
+        </div>
+        <p>第一次投稿就被选进了月度精选，编辑部给了很具体的修改意见，不是那种客套的回复。作为新人，这种反馈比流量更珍贵。</p>
+      </div>
+      <div class="hy-comment">
+        <div class="hy-comment-top">
+          <span class="hy-avatar hy-avatar-sm" style="background:#6b4f76">梁</span>
+          <span class="hy-comment-who"><b>梁未晞</b><small>社区用户 · 影像爱好者</small></span>
+          <span class="hy-comment-stars">★★★★★</span>
+        </div>
+        <p>实用攻略那一栏真的有用，我按着取景指南走了一遍老城，拍出来的素材质量明显提升。希望以后多出一些后期调色的内容。</p>
+      </div>
+      <div class="hy-comment">
+        <div class="hy-comment-top">
+          <span class="hy-avatar hy-avatar-sm" style="background:#3d5a66">罗</span>
+          <span class="hy-comment-who"><b>罗屿</b><small>社区用户 · 加入 1 年</small></span>
+          <span class="hy-comment-stars">★★★★☆</span>
+        </div>
+        <p>线下的放映活动去过一次，场地不大，人也不多，但讨论很真诚。感觉这里的社区不是靠热闹撑起来的，是靠大家真的在乎内容。</p>
+      </div>
+      <div class="hy-comment">
+        <div class="hy-comment-top">
+          <span class="hy-avatar hy-avatar-sm" style="background:#b3541e">崔</span>
+          <span class="hy-comment-who"><b>崔然</b><small>驻站创作者</small></span>
+          <span class="hy-comment-stars">★★★★★</span>
+        </div>
+        <p>平台给的支持不只是推荐位，还有设备和场地协调。对独立创作者来说，能少操心一件后勤的事，就多一份精力放在内容上。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 企业动态 -->
+<section class="hy-sec hy-sec-alt" id="hyNews">
+  <div class="hy-shell">
+    <div class="hy-sec-head">
+      <span class="hy-eyebrow">企业动态</span>
+      <h2 class="hy-h2">官方发布与更新日志</h2>
+      <p class="hy-sec-lead">关于花都影视的重要节点、内容更新与合作信息。</p>
+    </div>
+    <div class="hy-news">
+      <div class="hy-news-item">
+        <span class="hy-news-date">2026-11-15</span>
+        <span class="hy-news-title">《花都十二时辰》第四季启动，创作者招募同步开放
+          <small>新一季将聚焦城市夜间经济，计划出品十二集，报名截止至本月底。</small>
+        </span>
+        <span class="hy-news-cat">官方发布</span>
+      </div>
+      <div class="hy-news-item">
+        <span class="hy-news-date">2026-11-08</span>
+        <span class="hy-news-title">官方网站完成内容架构升级，新增专题与创作者档案页
+          <small>本次升级优化了检索路径，创作者作品可按题材与年份筛选。</small>
+        </span>
+        <span class="hy-news-cat">产品更新</span>
+      </div>
+      <div class="hy-news-item">
+        <span class="hy-news-date">2026-10-27</span>
+        <span class="hy-news-title">与三家城市文化机构达成内容共建合作
+          <small>合作方向包括城市影像档案、公共空间记录与青年创作者扶持。</small>
+        </span>
+        <span class="hy-news-cat">合作动态</span>
+      </div>
+      <div class="hy-news-item">
+        <span class="hy-news-date">2026-10-12</span>
+        <span class="hy-news-title">秋季线下放映与创作者沙龙顺利举办
+          <small>共展映九部短片，现场设置创作者问答与器材体验环节。</small>
+        </span>
+        <span class="hy-news-cat">社区活动</span>
+      </div>
+      <div class="hy-news-item">
+        <span class="hy-news-date">2026-09-30</span>
+        <span class="hy-news-title">第三季度精品内容报告发布，原创占比提升至八成
+          <small>报告涵盖内容结构、创作者成长与用户反馈三部分。</small>
+        </span>
+        <span class="hy-news-cat">品牌报告</span>
+      </div>
+    </div>
+
+    <div class="hy-sec-head" style="margin-top:52px;margin-bottom:26px">
+      <span class="hy-eyebrow">合作品牌</span>
+      <h3 class="hy-h2" style="font-size:23px">与我们共同记录城市的伙伴</h3>
+    </div>
+    <div class="hy-partners">
+      <div class="hy-partner">城南书店</div>
+      <div class="hy-partner">江岸咖啡</div>
+      <div class="hy-partner">老城文化馆</div>
+      <div class="hy-partner">骑楼影像社</div>
+      <div class="hy-partner">慢行户外</div>
+      <div class="hy-partner">花城设计周</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="hy-sec" id="hyFaq">
+  <div class="hy-shell">
+    <div class="hy-sec-head">
+      <span class="hy-eyebrow">帮助中心</span>
+      <h2 class="hy-h2">常见问题</h2>
+      <p class="hy-sec-lead">关于内容、投稿、合作与版权的常见疑问。</p>
+    </div>
+    <div class="hy-faq">
+      <details open>
+        <summary>花都影视的内容可以在哪里看？</summary>
+        <div class="hy-faq-body">花都影视官方网站是品牌内容的官方聚合入口，可浏览焦点内容、专题企划、创作者作品与更新动态。部分系列内容会在品牌官方渠道同步发布，具体以官网发布信息为准。</div>
+      </details>
+      <details>
+        <summary>如何向花都影视投稿？</summary>
+        <div class="hy-faq-body">点击页面中的投稿入口，填写作品链接、题材与创作说明即可提交。编辑部会在五个工作日内给出反馈，入选作品将进入月度精选并获得官方推荐资源。</div>
+      </details>
+      <details>
+        <summary>投稿作品有什么要求？</summary>
+        <div class="hy-faq-body">作品需为原创，画质建议 1080P 及以上，时长不限。题材围绕城市、生活与人物故事更契合平台调性。请在提交时注明拍摄时间、地点与素材来源。</div>
+      </details>
+      <details>
+        <summary>企业可以如何与花都影视合作？</summary>
+        <div class="hy-faq-body">我们提供城市形象片、品牌故事片与系列短纪录的定制服务，也可基于现有专题进行联合企划。请通过联系模块留下需求描述，商务团队会与您对接。</div>
+      </details>
+      <details>
+        <summary>平台如何保护创作者版权？</summary>
+        <div class="hy-faq-body">所有官方发布内容均保留创作者署名，并提供版权登记协助。平台承诺不将创作者作品用于未经授权的商业用途，合作项目均以书面形式确认授权范围。</div>
+      </details>
+      <details>
+        <summary>是否可以参与线下放映与沙龙？</summary>
+        <div class="hy-faq-body">可以。花都影视每季度举办一次线下放映与创作者沙龙，社区用户可以报名参加，名额有限。活动信息会在企业动态与官方发布栏目同步更新。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 联系 -->
+<section class="hy-sec hy-sec-alt" id="hyContact">
+  <div class="hy-shell">
+    <div class="hy-sec-head">
+      <span class="hy-eyebrow">联系与投稿</span>
+      <h2 class="hy-h2">把你的城市故事，交给值得信赖的平台</h2>
+      <p class="hy-sec-lead">无论是作品投稿、合作咨询还是社区建议，我们都愿意认真读完每一条消息。</p>
+    </div>
+    <div class="hy-contact">
+      <div class="hy-contact-card">
+        <h3>花都影视 · 官方联系入口</h3>
+        <p>内容合作、品牌定制、创作者入驻与投稿咨询，均可通过下方入口提交。我们坚持用户至上，所有来件将在工作日 48 小时内得到回复。</p>
+        <div class="hy-contact-actions">
+          <button class="hy-ca-main" id="hySubmitOpen">投稿与咨询</button>
+          <button class="hy-ca-line" id="hyReportOpen">反馈问题</button>
+          <button class="hy-ca-line" id="hyShareOpen2">分享官网</button>
+        </div>
+      </div>
+      <div class="hy-contact-info">
+        <div>
+          <span class="hy-ci-ico">稿</span>
+          <span><b>投稿邮箱</b><small>creator@huadufilm.example</small></span>
+        </div>
+        <div>
+          <span class="hy-ci-ico">商</span>
+          <span><b>商务合作</b><small>brand@huadufilm.example</small></span>
+        </div>
+        <div>
+          <span class="hy-ci-ico">社</span>
+          <span><b>社区与活动</b><small>community@huadufilm.example</small></span>
+        </div>
+        <div>
+          <span class="hy-ci-ico">址</span>
+          <span><b>内容中心</b><small>花都影视创意园区 B 座三层</small></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="hy-footer">
+  <div class="hy-shell">
+    <div class="hy-footer-grid">
+      <div>
+        <div class="hy-footer-brand">
+          <span class="hy-brand-mark" style="background:#f5b841">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 5.5 19 12 8 18.5Z" fill="#12294d"/></svg>
+          </span>
+          <span class="hy-brand-name">花都影视<small>HUADU FILM</small></span>
+        </div>
+        <p>花都影视官方网站，专注城市影像与在地文化的原创内容品牌。我们持续运营，深耕垂直领域，为创作者与企业搭建值得信赖的内容生态。</p>
+      </div>
+      <div>
+        <h4>内容频道</h4>
+        <ul>
+          <li><a href="#hyFocus">焦点内容</a></li>
+          <li><a href="#hyStream">热门视频流</a></li>
+          <li><a href="#hyTopic">专题企划</a></li>
+          <li><a href="#hyWall">用户作品墙</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于品牌</h4>
+        <ul>
+          <li><a href="#hyIntro">品牌解析</a></li>
+          <li><a href="#hyCreator">创作者矩阵</a></li>
+          <li><a href="#hyNews">企业动态</a></li>
+          <li><a href="#hyFaq">帮助中心</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>官方信息</h4>
+        <ul>
+          <li><a href="#hyContact">投稿与合作</a></li>
+          <li><a href="#hyContact">反馈问题</a></li>
+          <li><a href="#hyTop">返回顶部</a></li>
+        </ul>
+        <p style="margin-top:14px">官方发布 · 正版原创 · 高清品质<br>内容生态持续更新中</p>
+      </div>
+    </div>
+    <div class="hy-footer-bottom">
+      <span>© 2026 花都影视官方网站 · 版权所有 · 持续运营中</span>
+      <span>品牌备案号：花都影备 2026-0118 号 · 内容审核与版权登记完成</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div class="hy-toast" id="hyToast"></div>
+
+<!-- 通用弹窗 -->
+<div class="hy-modal-mask" id="hyModalMask">
+  <div class="hy-modal" id="hyModalBox" role="dialog" aria-modal="true">
+    <button class="hy-modal-close" id="hyModalClose" aria-label="关闭">×</button>
+    <div id="hyModalContent"></div>
+  </div>
+</div>
+
+<!-- 回到顶部 -->
+<button class="hy-totop" id="hyToTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var toastEl = document.getElementById('hyToast');
+  var toastTimer = null;
+  function showToast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('hy-toast-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('hy-toast-on'); }, 2200);
+  }
+
+  /* 移动端导航 */
+  var burger = document.getElementById('hyBurger');
+  var nav = document.getElementById('hyNav');
+  if(burger){
+    burger.addEventListener('click', function(){
+      nav.classList.toggle('hy-nav-open');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){ nav.classList.remove('hy-nav-open'); }
+    });
+  }
+
+  /* 导航高亮 */
+  var navLinks = Array.prototype.slice.call(nav.querySelectorAll('a'));
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY + 190;
+    var current = navLinks[0];
+    navLinks.forEach(function(a){
+      var id = a.getAttribute('href');
+      if(id && id.charAt(0) === '#'){
+        var sec = document.querySelector(id);
+        if(sec && sec.offsetTop <= y){ current = a; }
+      }
+    });
+    navLinks.forEach(function(a){ a.classList.remove('hy-nav-on'); });
+    if(current) current.classList.add('hy-nav-on');
+  });
+
+  /* 搜索 */
+  var searchInput = document.getElementById('hySearchInput');
+  var searchBtn = document.getElementById('hySearchBtn');
+  var searchHit = document.getElementById('hySearchHit');
+  function doSearch(){
+    var kw = (searchInput.value || '').trim();
+    if(!kw){
+      searchHit.textContent = '请输入关键词后再搜索，例如：纪录、访谈、攻略、幕后。';
+      searchHit.classList.add('hy-on');
+      return;
+    }
+    searchHit.textContent = '已为你定位与“' + kw + '”相关的内容方向，可在下方视频流中筛选「纪录 / 访谈 / 攻略 / 幕后 / 治愈」进一步查看。';
+    searchHit.classList.add('hy-on');
+    var target = document.getElementById('hyStream');
+    if(target){ target.scrollIntoView({behavior:'smooth'}); }
+  }
+  if(searchBtn){ searchBtn.addEventListener('click', doSearch); }
+  if(searchInput){
+    searchInput.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ doSearch(); }
+    });
+  }
+
+  /* 标签筛选 */
+  var filterRow = document.getElementById('hyFilterRow');
+  var streamGrid = document.getElementById('hyStreamGrid');
+  if(filterRow && streamGrid){
+    filterRow.addEventListener('click', function(e){
+      var btn = e.target.closest('.hy-chip');
+      if(!btn) return;
+      filterRow.querySelectorAll('.hy-chip').forEach(function(c){ c.classList.remove('hy-chip-on'); });
+      btn.classList.add('hy-chip-on');
+      var tag = btn.getAttribute('data-tag');
+      streamGrid.querySelectorAll('.hy-vcard').forEach(function(card){
+        var cardTag = card.getAttribute('data-tag');
+        card.style.display = (tag === 'all' || cardTag === tag) ? '' : 'none';
+      });
+    });
+  }
+
+  /* 点赞 & 收藏 */
+  document.addEventListener('click', function(e){
+    var likeBtn = e.target.closest('.hy-like-btn');
+    if(likeBtn){
+      var numEl = likeBtn.querySelector('b');
+      var base = parseInt(likeBtn.getAttribute('data-count'), 10);
+      if(likeBtn.classList.contains('hy-liked')){
+        likeBtn.classList.remove('hy-liked');
+        numEl.textContent = base;
+        showToast('已取消点赞');
+      } else {
+        likeBtn.classList.add('hy-liked');
+        numEl.textContent = base + 1;
+        showToast('已点赞，感谢支持');
+      }
+      return;
+    }
+    var saveBtn = e.target.closest('.hy-save-btn');
+    if(saveBtn){
+      if(saveBtn.classList.contains('hy-saved')){
+        saveBtn.classList.remove('hy-saved');
+        saveBtn.innerHTML = '<span>☆</span> 收藏';
+        showToast('已取消收藏');
+      } else {
+        saveBtn.classList.add('hy-saved');
+        saveBtn.innerHTML = '<span>★</span> 已收藏';
+        showToast('已收藏到个人片单');
+      }
+      return;
+    }
+  });
+
+  /* 弹窗 */
+  var mask = document.getElementById('hyModalMask');
+  var box = document.getElementById('hyModalContent');
+  function openModal(html){
+    box.innerHTML = html;
+    mask.classList.add('hy-modal-on');
+  }
+  function closeModal(){
+    mask.classList.remove('hy-modal-on');
+  }
+  document.getElementById('hyModalClose').addEventListener('click', closeModal);
+  mask.addEventListener('click', function(e){ if(e.target === mask) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+  /* 评论弹窗 */
+  document.addEventListener('click', function(e){
+    if(e.target.closest('.hy-comment-open')){
+      openModal(
+        '<h3>发表评论</h3>' +
+        '<p>友善讨论是花都影视社区的底色。你的评论会展示在作品页，并同步至创作者后台。</p>' +
+        '<div class="hy-modal-field"><textarea id="hyCommentText" rows="4" placeholder="说说你看到了什么……"></textarea></div>' +
+        '<button class="hy-modal-submit" id="hyCommentSend">发布评论</button>'
+      );
+      var send = document.getElementById('hyCommentSend');
+      send.addEventListener('click', function(){
+        var val = document.getElementById('hyCommentText').value.trim();
+        if(!val){ showToast('请先写点什么'); return; }
+        closeModal();
+        showToast('评论已提交，等待通过后展示');
+      });
+    }
+  });
+
+  /* 作者档案弹窗 */
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.hy-author-open');
+    if(btn){
+      openModal(
+        '<h3>' + btn.getAttribute('data-author') + '</h3>' +
+        '<p><b style="color:#1f4e8c">擅长领域：</b>' + btn.getAttribute('data-field') + '</p>' +
+        '<p>' + btn.getAttribute('data-bio') + '</p>' +
+        '<button class="hy-modal-submit" id="hyAuthorFollow">关注该作者</button>'
+      );
+      document.getElementById('hyAuthorFollow').addEventListener('click', function(){
+        closeModal();
+        showToast('已关注，作品更新时会提醒你');
+      });
+    }
+  });
+
+  /* 分享 */
+  function openShare(){
+    openModal(
+      '<h3>分享花都影视官方网站</h3>' +
+      '<p>把这座城市的影像，分享给同样喜欢慢下来的人。</p>' +
+      '<div class="hy-share-row">' +
+        '<button data-share="微信">微信</button>' +
+        '<button data-share="微博">微博</button>' +
+        '<button data-share="QQ">QQ</button>' +
+        '<button data-share="复制">复制链接</button>' +
+      '</div>'
+    );
+    box.querySelectorAll('[data-share]').forEach(function(b){
+      b.addEventListener('click', function(){
+        var t = b.getAttribute('data-share');
+        if(t === '复制'){
+          var link = 'https://www.huadufilm.example/';
+          if(navigator.clipboard && navigator.clipboard.writeText){
+            navigator.clipboard.writeText(link).then(function(){ showToast('链接已复制'); }, function(){ showToast('复制失败，请手动选择'); });
+          } else {
+            showToast('当前环境不支持自动复制');
+          }
+          closeModal();
+        } else {
+          closeModal();
+          showToast('已生成' + t + '分享卡片，请在对应客户端粘贴');
+        }
+      });
+    });
+  }
+  ['hyShareOpen','hyShareOpen2'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el){ el.addEventListener('click', openShare); }
+  });
+
+  /* 投稿弹窗 */
+  var submitOpen = document.getElementById('hySubmitOpen');
+  if(submitOpen){
+    submitOpen.addEventListener('click', function(){
+      openModal(
+        '<h3>投稿与咨询</h3>' +
+        '<p>留下你的联系方式与内容方向，编辑团队会在 48 小时内回复。</p>' +
+        '<div class="hy-modal-field">' +
+          '<input type="text" id="hyFormName" placeholder="你的称呼">' +
+          '<input type="text" id="hyFormContact" placeholder="邮箱或联系方式">' +
+          '<textarea id="hyFormMsg" rows="3" placeholder="作品类型/合作方向/想说的话"></textarea>' +
+        '</div>' +
+        '<button class="hy-modal-submit" id="hyFormSend">提交</button>'
+      );
+      document.getElementById('hyFormSend').addEventListener('click', function(){
+        var n = document.getElementById('hyFormName').value.trim();
+        var c = document.getElementById('hyFormContact').value.trim();
+        if(!n || !c){ showToast('请填写称呼与联系方式'); return; }
+        closeModal();
+        showToast('已收到你的信息，编辑部会尽快回复');
+      });
+    });
+  }
+
+  /* 反馈弹窗 */
+  var reportOpen = document.getElementById('hyReportOpen');
+  if(reportOpen){
+    reportOpen.addEventListener('click', function(){
+      openModal(
+        '<h3>反馈问题</h3>' +
+        '<p>遇到播放、页面或内容相关问题，欢迎告诉我们，我们会尽快核查。</p>' +
+        '<div class="hy-modal-field"><textarea id="hyReportMsg" rows="4" placeholder="请描述你遇到的问题"></textarea></div>' +
+        '<button class="hy-modal-submit" id="hyReportSend">提交反馈</button>'
+      );
+      document.getElementById('hyReportSend').addEventListener('click', function(){
+        var v = document.getElementById('hyReportMsg').value.trim();
+        if(!v){ showToast('请先填写问题描述'); return; }
+        closeModal();
+        showToast('反馈已提交，感谢你的帮助');
+      });
+    });
+  }
+
+  /* 查看更多 */
+  var moreBtn = document.getElementById('hyMoreBtn');
+  if(moreBtn){
+    moreBtn.addEventListener('click', function(){
+      showToast('已是最新内容，下期精品将在周五更新');
+    });
+  }
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('hyToTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 520){ toTop.classList.add('hy-totop-on'); }
+    else { toTop.classList.remove('hy-totop-on'); }
+  });
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+</body>
+                                                                                                        </html>
